@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -32,6 +34,75 @@
         .hero-pattern {
             background-color: #f8f9fa;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237f87cd' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* FullCalendar Custom Styles */
+        a.fc-col-header-cell-cushion,
+        a.fc-daygrid-day-number {
+            text-decoration: none !important;
+            color: #4b5563 !important;
+        }
+
+        .fc .fc-toolbar-title {
+            font-size: 1.25rem !important;
+            font-weight: 700 !important;
+            color: #1f2937 !important;
+        }
+
+        .fc .fc-button-primary {
+            background-color: #1c75ac !important;
+            border-color: #1c75ac !important;
+            text-transform: capitalize !important;
+            font-weight: 500 !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 0.5rem !important;
+            transition: all 0.2s !important;
+        }
+
+        .fc .fc-button-primary:hover {
+            background-color: #155a8a !important;
+            border-color: #155a8a !important;
+        }
+
+        .fc-event {
+            border: none !important;
+            padding: 2px 4px !important;
+            font-size: 0.75rem !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            margin-bottom: 2px !important;
+        }
+
+        .fc .fc-daygrid-day.fc-day-today {
+            background-color: #e6f0fa !important;
+        }
+
+        @media (max-width: 768px) {
+            .fc .fc-toolbar {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+
+            .fc .fc-toolbar-title {
+                font-size: 1rem !important;
+            }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
@@ -254,7 +325,7 @@
                         dan jaringan pemasaran untuk mengembangkan bisnis Anda.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#"
+                        <a href="https://ecsys.okoce.net/register"
                             class="px-8 py-4 bg-okoce-blue text-white rounded-full font-semibold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">Daftar
                             Anggota</a>
                         <a href="https://youtu.be/DjF6FKYGYbU" target="_blank"
@@ -277,16 +348,56 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 relative">
-                    <div
-                        class="relative rounded-3xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
-                        <img src="http://okoce.net/wp-content/uploads/2025/12/image-5.png" alt="Diskusi Wirausaha"
-                            class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 text-white p-4">
-                            <p class="font-bold text-xl">Komunitas Wirausaha</p>
-                            <p class="text-sm opacity-90">Saling mendukung untuk tumbuh bersama</p>
+                    <a href="https://www.youtube.com/watch?v=DjF6FKYGYbU&feature=youtu.be" target="_blank"
+                        class="block relative group rounded-3xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500 aspect-video bg-gray-900">
+                        <!-- High Quality Thumbnail -->
+                        <img src="https://img.youtube.com/vi/DjF6FKYGYbU/hqdefault.jpg"
+                            alt="Tutorial Daftar Anggota OK OCE"
+                            class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity">
+
+                        <!-- YouTube UI Lookalike -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-transparent opacity-60">
                         </div>
-                    </div>
+
+                        <!-- Video Title Bar -->
+                        <div class="absolute top-0 left-0 right-0 p-4 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1 shadow-lg">
+                                <img src="https://okoce.net/wp-content/uploads/2021/03/logo-okoce-01-150x150.png"
+                                    alt="OK OCE Logo" class="w-full h-full object-contain">
+                            </div>
+                            <div class="flex-1">
+                                <h4
+                                    class="text-white font-medium text-sm lg:text-base line-clamp-1 drop-shadow-lg pr-4">
+                                    GAMPANG BANGET!!! JADI ANGGOTA OK OCE KURANG DARI 5 MENIT
+                                </h4>
+                            </div>
+                            <div
+                                class="flex flex-col items-center text-white/90 hover:text-white transition-colors cursor-pointer">
+                                <i class="fas fa-share text-lg"></i>
+                                <span class="text-[10px] font-bold mt-1">Bagikan</span>
+                            </div>
+                        </div>
+
+                        <!-- YouTube Play Button (Exact Style) -->
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div
+                                class="w-16 h-11 bg-[#FF0000] rounded-xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                                <div
+                                    class="w-0 h-0 border-t-[9px] border-t-transparent border-l-[15px] border-l-white border-b-[9px] border-b-transparent ml-1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Left Tag -->
+                        <div class="absolute bottom-4 left-4">
+                            <div
+                                class="flex items-center gap-2 px-3 py-1.5 bg-black/50 backdrop-blur-md rounded-md border border-white/10 text-[10px] text-white font-semibold">
+                                <i class="fab fa-youtube text-red-600 text-sm"></i>
+                                TONTON DI YOUTUBE
+                            </div>
+                        </div>
+                    </a>
                     <!-- Decor Elements -->
                     <div class="absolute -top-10 -right-10 w-32 h-32 bg-okoce-red/10 rounded-full blur-2xl"></div>
                     <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-okoce-blue/10 rounded-full blur-2xl"></div>
@@ -406,18 +517,27 @@
 
                 <!-- Tahap 7 -->
                 <div
-                    class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group border-b-4 border-transparent hover:border-okoce-blue col-span-1 md:col-span-2 lg:col-span-2">
-                    <div class="flex flex-col md:flex-row items-center gap-6">
-                        <div
-                            class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-okoce-blue transition-colors">
-                            <span class="text-2xl font-bold text-okoce-blue group-hover:text-white">7</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-gray-900">Akses Permodalan</h3>
-                            <p class="text-gray-600 text-sm">Fasilitasi akses ke lembaga keuangan and investor bagi
-                                usaha yang siap tumbuh.</p>
-                        </div>
+                    class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group border-b-4 border-transparent hover:border-okoce-blue">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-okoce-blue transition-colors">
+                        <span class="text-2xl font-bold text-okoce-blue group-hover:text-white">7</span>
                     </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Akses Permodalan</h3>
+                    <p class="text-gray-600 text-sm">Fasilitasi akses ke lembaga keuangan and investor bagi
+                        usaha yang siap tumbuh.</p>
+                </div>
+
+                <!-- CTA Card (8th Slot) -->
+                <div
+                    class="bg-okoce-red p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group flex flex-col items-center justify-center text-center">
+                    <div class="mb-4 text-white text-3xl">
+                        <i class="fas fa-user-plus transition-transform group-hover:scale-110"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white font-bold uppercase tracking-wide">Siap Sukses?</h3>
+                    <a href="https://ecsys.okoce.net/register" target="_blank"
+                        class="w-full py-3 bg-white text-okoce-red rounded-full font-bold hover:bg-gray-50 transition-colors shadow-md">
+                        DAFTAR
+                    </a>
                 </div>
             </div>
         </div>
@@ -582,6 +702,72 @@
             animation: float 4s ease-in-out infinite;
         }
     </style>
+
+    <!-- Agenda Kegiatan Section -->
+    <section id="agenda" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-okoce-blue mb-4">AGENDA KEGIATAN</h2>
+                <div class="w-24 h-1 bg-okoce-red mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Pantau jadwal pelatihan, seminar, dan workshop kewirausahaan terbaru dari OK OCE Indonesia.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Calendar Column -->
+                <div class="w-full lg:w-3/4">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+                        <div id='calendar' class="min-h-[600px]"></div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Column -->
+                <div class="w-full lg:w-1/4 flex flex-col gap-6">
+                    <!-- App Download Card -->
+                    <div
+                        class="bg-gradient-to-br from-green-500 to-green-700 rounded-2xl p-6 text-white text-center shadow-lg transform hover:scale-[1.02] transition-all duration-300">
+                        <i class="fas fa-mobile-alt text-4xl mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2">Unduh Aplikasi Event</h3>
+                        <p class="text-xs text-green-50 mb-6">Daftar & pantau semua agenda event OK OCE langsung dari
+                            smartphone Anda!</p>
+                        <a href="http://okoce.net/wp-content/uploads/2025/12/OKOCE.apk"
+                            class="block w-full py-3 bg-white text-green-700 font-bold rounded-xl hover:bg-gray-50 transition-colors shadow-md"
+                            target="_blank">
+                            <i class="fab fa-android mr-2"></i> Download APK
+                        </a>
+                    </div>
+
+                    <!-- Upcoming Events Feed -->
+                    <div class="flex flex-col h-full">
+                        <div class="bg-okoce-blue text-white p-4 rounded-t-2xl shadow-md flex items-center gap-3">
+                            <i class="fas fa-bullhorn animate-pulse"></i>
+                            <h4 class="font-bold">Segera Hadir</h4>
+                        </div>
+                        <div id="upcoming-events-list-container"
+                            class="bg-gray-50 rounded-b-2xl p-4 border border-t-0 border-gray-100 flex-1 overflow-y-auto max-h-[400px] custom-scrollbar">
+                            <div id="upcoming-events-list" class="flex flex-col gap-4">
+                                <!-- Events will be loaded here -->
+                            </div>
+
+                            <!-- More Events CTA -->
+                            <!-- <div
+                                class="mt-6 bg-gradient-to-br from-okoce-blue to-blue-800 rounded-xl p-6 text-white text-center">
+                                <i class="fas fa-rocket text-3xl mb-3 text-yellow-400"></i>
+                                <h5 class="font-bold mb-2">Lihat Lebih Banyak?</h5>
+                                <p class="text-xs text-blue-100 mb-4 text-center">Kunjungi halaman event resmi kami
+                                    untuk agenda lengkap.</p>
+                                <a href="https://okoce.net/event/"
+                                    class="inline-block px-4 py-2 bg-white text-okoce-blue text-xs font-bold rounded-full hover:bg-gray-100 transition-colors shadow-sm">
+                                    Klik Event Lainnya!
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- News & Stories -->
     <section id="berita" class="py-20 bg-white">
@@ -864,6 +1050,187 @@
         </div>
     </div>
 </footer>
+<!-- Event Schedule Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', async function () {
+        const calendarEl = document.getElementById('calendar');
+        const upcomingEventsListEl = document.getElementById('upcoming-events-list');
+
+        // --- API CONFIGURATION ---
+        const TARGET_API = 'http://72.61.142.20:8002/api/public/events';
+        const API_URL = `https://api.allorigins.win/raw?url=${encodeURIComponent(TARGET_API)}`;
+        const DOWNLOAD_URL = 'http://okoce.net/wp-content/uploads/2025/12/OKOCE.apk';
+
+        const COOKIE_NAME = 'okoce_events_cache';
+        const COOKIE_EXPIRY_DAYS = 1;
+
+        // --- COOKIE MANAGER ---
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (encodeURIComponent(value) || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+            }
+            return null;
+        }
+
+        // --- DATA FORMATTING ---
+        function getColorByIndex(index) {
+            const colors = [
+                { bg: '#e01f31', tag: 'okoce-red' },
+                { bg: '#1c75ac', tag: 'okoce-blue' },
+                { bg: '#10B981', tag: 'green-500' },
+                { bg: '#F59E0B', tag: 'yellow-500' },
+                { bg: '#8B5CF6', tag: 'purple-500' }
+            ];
+            return colors[index % colors.length];
+        }
+
+        async function getEventsData() {
+            const cachedData = getCookie(COOKIE_NAME);
+            if (cachedData) {
+                return JSON.parse(cachedData);
+            }
+
+            try {
+                const response = await fetch(API_URL);
+                const json = await response.json();
+
+                if (json.status === 'success' && json.data) {
+                    const formattedEvents = json.data.map((item, index) => {
+                        const style = getColorByIndex(index);
+                        return {
+                            title: item.title,
+                            start: item.start_time,
+                            description: item.description,
+                            location: item.location,
+                            url: DOWNLOAD_URL,
+                            backgroundColor: style.bg,
+                            borderColor: style.bg,
+                            tagColor: style.tag
+                        };
+                    });
+
+                    setCookie(COOKIE_NAME, JSON.stringify(formattedEvents), COOKIE_EXPIRY_DAYS);
+                    return formattedEvents;
+                }
+            } catch (error) {
+                console.error("Failed to fetch events:", error);
+                return [
+                    {
+                        title: 'Download Aplikasi Event',
+                        start: new Date().toISOString(),
+                        backgroundColor: '#e01f31',
+                        tagColor: 'okoce-red',
+                        description: 'Gagal memuat data terbaru. Silakan unduh aplikasi untuk info lengkap.',
+                        location: 'Online',
+                        url: DOWNLOAD_URL
+                    }
+                ];
+            }
+            return [];
+        }
+
+        // --- RENDERING ---
+        const eventData = await getEventsData();
+        const today = new Date();
+
+        // Initialize FullCalendar
+        if (calendarEl) {
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'id',
+                height: 'auto',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,listMonth'
+                },
+                buttonText: {
+                    today: 'Hari Ini',
+                    month: 'Bulan',
+                    list: 'Agenda'
+                },
+                events: eventData.map(event => ({
+                    title: event.title,
+                    start: event.start,
+                    backgroundColor: event.backgroundColor,
+                    borderColor: event.borderColor,
+                    url: event.url,
+                    extendedProps: {
+                        description: event.description,
+                        location: event.location
+                    }
+                })),
+                eventClick: function (info) {
+                    info.jsEvent.preventDefault();
+                    window.open(info.event.url, '_blank');
+                }
+            });
+            calendar.render();
+        }
+
+        // Render Sidebar
+        if (upcomingEventsListEl) {
+            const futureEvents = eventData.filter(event => new Date(event.start) > today)
+                .sort((a, b) => new Date(a.start) - new Date(b.start));
+
+            const colorMap = {
+                'okoce-red': { border: 'border-okoce-red', text: 'text-okoce-red bg-red-50' },
+                'okoce-blue': { border: 'border-okoce-blue', text: 'text-okoce-blue bg-blue-50' },
+                'green-500': { border: 'border-green-500', text: 'text-green-600 bg-green-50' },
+                'yellow-500': { border: 'border-yellow-500', text: 'text-yellow-600 bg-yellow-50' },
+                'purple-500': { border: 'border-purple-500', text: 'text-purple-600 bg-purple-50' }
+            };
+
+            if (futureEvents.length > 0) {
+                upcomingEventsListEl.innerHTML = futureEvents.map(event => {
+                    const eventStart = new Date(event.start);
+                    const day = eventStart.getDate().toString().padStart(2, '0');
+                    const month = eventStart.toLocaleDateString('id-ID', { month: 'short' });
+                    const time = eventStart.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+                    const colors = colorMap[event.tagColor] || colorMap['okoce-blue'];
+
+                    return `
+                        <a href="${event.url}" target="_blank"
+                            class="bg-white border-l-4 ${colors.border} shadow-sm rounded-r-xl p-4 hover:shadow-md transition-all duration-300 group">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-xs font-bold ${colors.text} px-2 py-1 rounded">${day} ${month}</span>
+                                <span class="text-[10px] text-gray-400 bg-gray-50 px-2 py-1 rounded-full"><i class="fas fa-download mr-1"></i> App</span>
+                            </div>
+                            <h5 class="font-bold text-gray-800 leading-tight mb-2 group-hover:text-okoce-blue transition-colors">${event.title}</h5>
+                            <p class="text-xs text-gray-500 mb-3 line-clamp-2">${event.description}</p>
+                            <div class="flex items-center text-[10px] text-gray-400 font-medium">
+                                <i class="fas fa-map-marker-alt mr-1 text-okoce-red"></i> ${event.location || 'Online'} 
+                                <span class="mx-2">•</span>
+                                <i class="far fa-clock mr-1"></i> ${time} WIB
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            } else {
+                upcomingEventsListEl.innerHTML = `
+                    <div class="text-center p-8 bg-white rounded-xl border border-dashed border-gray-200">
+                        <i class="fas fa-calendar-day text-3xl text-gray-200 mb-3"></i>
+                        <p class="text-gray-500 text-sm">Belum ada agenda baru.</p>
+                        <p class="text-[10px] text-gray-400 mt-1">Cek aplikasi untuk update harian.</p>
+                    </div>`;
+            }
+        }
+    });
+</script>
 </body>
 
 </html>
