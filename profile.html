@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil OK OCE - Gerakan Penciptaan Lapangan Kerja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        okoce: {
+                            blue: '#1c75ac',
+                            red: '#e01f31',
+                            dark: '#1a1a1a',
+                            light: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+                <span class="text-okoce-blue">OK</span><span class="text-okoce-red">OCE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <!-- Tentang Kami Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 text-okoce-blue font-bold transition-colors">
+                        Tentang Kami
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="profile.html" class="block px-4 py-2 bg-blue-50 text-okoce-blue font-semibold">Profil
+                            OK OCE</a>
+                        <a href="visi-misi.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Visi & Misi</a>
+                        <a href="structure.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Struktur
+                            Organisasi</a>
+                    </div>
+                </div>
+
+                <a href="index.html#7-tahapan"
+                    class="text-gray-600 hover:text-okoce-blue font-medium transition-colors">7 Tahapan</a>
+
+                <!-- Program Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-gray-600 hover:text-okoce-blue font-medium transition-colors">
+                        Program & Event
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="index.html#7-tahapan"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Pelatihan</a>
+                        <a href="events.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Daftar
+                            Event</a>
+                        <a href="penggerak.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Jejaring
+                            Penggerak</a>
+                        <a href="modal-berkah.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Modal
+                            Berkah</a>
+                        <a href="merchandise.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Merchandise</a>
+                    </div>
+                </div>
+
+                <!-- Informasi Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-gray-600 hover:text-okoce-blue font-medium transition-colors">
+                        Informasi
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="news.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Berita</a>
+                        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Peluang
+                            Usaha</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Galeri</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 border-l pl-6 border-gray-200">
+                    <a href="#" class="text-gray-600 hover:text-okoce-blue font-medium transition-colors">Masuk</a>
+                    <a href="#"
+                        class="px-5 py-2 bg-okoce-red text-white rounded-full font-medium hover:bg-red-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Daftar</a>
+                </div>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-600 hover:text-okoce-blue focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header Small -->
+    <header class="bg-gray-900 pt-32 pb-16 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center opacity-20">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <span class="text-okoce-blue font-semibold tracking-wider uppercase mb-2 block">Tentang Kami</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Profil OK OCE</h1>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow">
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-16 items-start">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Penciptaan Lapangan Kerja Berbasis
+                            Komunitas</h2>
+                        <div class="w-24 h-1 bg-okoce-red mb-8 rounded-full"></div>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                            OK OCE (One Kecamatan, One Center of Entrepreneurship) adalah sebuah gerakan sosial
+                            penciptaan lapangan kerja berbasis kewirausahaan. Gerakan ini didirikan oleh Sandiaga Uno
+                            pada tahun 2016 dengan tujuan utama untuk menurunkan tingkat pengangguran melalui pelatihan
+                            dan pendampingan wirausaha.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                            Kami percaya bahwa kewirausahaan adalah kunci untuk mengatasi pengangguran dan meningkatkan
+                            kesejahteraan masyarakat. Melalui kurikulum 7 Tahapan OK OCE (7 TOP), kami memberikan
+                            panduan sistematis bagi siapa saja untuk memulai dan mengembangkan usahanya, dari
+                            pendaftaran hingga akses permodalan.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-okoce-blue">
+                                <h4 class="text-4xl font-bold text-okoce-blue mb-1">2016</h4>
+                                <p class="text-gray-600 font-medium">Tahun Berdiri</p>
+                            </div>
+                            <div class="bg-red-50 p-6 rounded-xl border-l-4 border-okoce-red">
+                                <h4 class="text-4xl font-bold text-okoce-red mb-1">Nasional</h4>
+                                <p class="text-gray-600 font-medium">Cakupan Gerakan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 relative space-y-6">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=800"
+                                alt="Team OK OCE" class="w-full h-full object-cover">
+                        </div>
+                        <div class="relative overflow-hidden rounded-2xl">
+                            <div id="founder-carousel" class="relative h-[320px] md:h-[260px]">
+                                <!-- Slide 1: Sandiaga Uno -->
+                                <div
+                                    class="founder-slide absolute inset-0 transition-all duration-700 ease-in-out opacity-100 visible">
+                                    <div
+                                        class="bg-gray-100 p-8 h-full rounded-2xl border-l-4 border-okoce-blue flex flex-col justify-between">
+                                        <p class="text-gray-800 italic text-lg mb-4 line-clamp-4 leading-relaxed">"OK
+                                            OCE adalah gerakan penciptaan lapangan kerja. Gerakan ini bukan hanya
+                                            sekedar memberikan pelatihan dan pendampingan, tapi juga membantu wirausaha
+                                            mendapatkan akses permodalan dan pemasaran. OK OCE bertujuan menciptakan
+                                            wirausaha baru yang mandiri."</p>
+                                        <div class="flex items-center gap-4 mt-auto">
+                                            <img src="https://akudigital.com/bisnis-tips/wp-content/uploads/2021/02/Biografi-sandiaga-uno.jpg"
+                                                alt="Sandiaga Uno"
+                                                class="w-12 h-12 rounded-full object-cover grayscale">
+                                            <div>
+                                                <p class="font-bold text-gray-900 leading-tight">Sandiaga Uno</p>
+                                                <p class="text-xs text-gray-500">Founder OK OCE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 2: Indra Uno -->
+                                <div
+                                    class="founder-slide absolute inset-0 transition-all duration-700 ease-in-out opacity-0 invisible">
+                                    <div
+                                        class="bg-gray-100 p-8 h-full rounded-2xl border-l-4 border-okoce-red flex flex-col justify-between">
+                                        <p class="text-gray-800 italic text-lg mb-4 line-clamp-4 leading-relaxed">
+                                            "Melalui OK OCE, kami berupaya menciptakan ekosistem yang mendukung
+                                            pertumbuhan ekonomi kerakyatan melalui wirausaha yang tangguh dan mandiri di
+                                            setiap pelosok negeri."</p>
+                                        <div class="flex items-center gap-4 mt-auto">
+                                            <img src="http://okoce.net/wp-content/uploads/2023/05/indra-uno-scaled.jpg"
+                                                alt="Indra Uno" class="w-12 h-12 rounded-full object-cover grayscale">
+                                            <div>
+                                                <p class="font-bold text-gray-900 leading-tight">Indra Uno</p>
+                                                <p class="text-xs text-gray-500">Founder OK OCE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 3: Iim Rusyamsi -->
+                                <div
+                                    class="founder-slide absolute inset-0 transition-all duration-700 ease-in-out opacity-0 invisible">
+                                    <div
+                                        class="bg-gray-100 p-8 h-full rounded-2xl border-l-4 border-okoce-blue flex flex-col justify-between">
+                                        <p class="text-gray-800 italic text-lg mb-4 line-clamp-4 leading-relaxed">"Tugas
+                                            kami adalah memastikan setiap pelaku usaha mendapatkan pendampingan yang
+                                            tepat melalui 7 Tahapan OK OCE untuk mencapai kesuksesan yang
+                                            berkelanjutan."</p>
+                                        <div class="flex items-center gap-4 mt-auto">
+                                            <img src="http://okoce.net/wp-content/uploads/2025/12/PAK-IIM.png"
+                                                alt="Iim Rusyamsi"
+                                                class="w-12 h-12 rounded-full object-cover grayscale">
+                                            <div>
+                                                <p class="font-bold text-gray-900 leading-tight">Iim Rusyamsi</p>
+                                                <p class="text-xs text-gray-500">Ketua Umum OK OCE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Indicators -->
+                            <div class="flex justify-center gap-2 mt-4">
+                                <button class="founder-dot w-2 h-2 rounded-full bg-gray-300 transition-all"
+                                    data-index="0"></button>
+                                <button class="founder-dot w-2 h-2 rounded-full bg-gray-300 transition-all"
+                                    data-index="1"></button>
+                                <button class="founder-dot w-2 h-2 rounded-full bg-gray-300 transition-all"
+                                    data-index="2"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Sejarah Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-okoce-blue font-bold tracking-wider uppercase mb-2 block">Perjalanan Kami</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Sejarah OK OCE</h2>
+                    <div class="w-24 h-1 bg-okoce-red mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto relative">
+                    <!-- Timeline Line -->
+                    <div
+                        class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 -translate-x-1/2 hidden md:block">
+                    </div>
+
+                    <!-- Timeline Item 1: 1998 -->
+                    <div class="relative z-10 mb-12 flex flex-col md:flex-row items-center justify-between group">
+                        <div class="order-1 md:w-5/12 text-center md:text-right px-6">
+                            <h3 class="text-3xl font-bold text-okoce-blue mb-2">1998</h3>
+                            <p class="text-gray-500 font-medium">Lahirnya Konsep</p>
+                        </div>
+                        <div class="order-1 md:w-2/12 flex justify-center py-4 md:py-0">
+                            <div
+                                class="w-8 h-8 bg-okoce-blue rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div
+                            class="order-1 md:w-5/12 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-okoce-blue hover:shadow-xl transition-shadow md:text-left">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                OK OCE lahir sebagai sebuah konsep pada tahun 1998 di keluarga Uno (Mien dan Henk Uno).
+                                Pada saat itu, banyak mahasiswa dari Gorontalo yang tidak bisa melanjutkan kuliah di
+                                Jakarta, dan meminta beasiswa kepada keluarga Uno. Setelah lulus, mereka kembali bekerja
+                                di perkebunan keluarga Uno.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: 2000 -->
+                    <div class="relative z-10 mb-12 flex flex-col md:flex-row items-center justify-between group">
+                        <div
+                            class="order-3 md:order-1 md:w-5/12 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-okoce-red hover:shadow-xl transition-shadow md:text-right">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Program beasiswa dirombak menjadi program beasiswa entrepreneur (pelatihan,
+                                pendampingan, sekolah pengangguran). Lahirlah <strong>Mien R Uno Foundation</strong>
+                                pada tahun 2000.
+                            </p>
+                        </div>
+                        <div class="order-2 md:w-2/12 flex justify-center py-4 md:py-0">
+                            <div
+                                class="w-8 h-8 bg-okoce-red rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-3 md:w-5/12 text-center md:text-left px-6">
+                            <h3 class="text-3xl font-bold text-okoce-red mb-2">2000</h3>
+                            <p class="text-gray-500 font-medium">Mien R Uno Foundation</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3: 2016 -->
+                    <div class="relative z-10 mb-12 flex flex-col md:flex-row items-center justify-between group">
+                        <div class="order-1 md:w-5/12 text-center md:text-right px-6">
+                            <h3 class="text-3xl font-bold text-okoce-blue mb-2">2016</h3>
+                            <p class="text-gray-500 font-medium">Solusi Jakarta</p>
+                        </div>
+                        <div class="order-1 md:w-2/12 flex justify-center py-4 md:py-0">
+                            <div
+                                class="w-8 h-8 bg-okoce-blue rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div
+                            class="order-1 md:w-5/12 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-okoce-blue hover:shadow-xl transition-shadow md:text-left">
+                            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                                Sandiaga Uno dan Anies Baswedan menawarkan solusi atas lonjakan pengangguran di Jakarta
+                                melalui kewirausahaan saat berkampanye.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Mereka memperkenalkan program OK OCE dengan target membangun satu pusat kewirausahaan di
+                                setiap kecamatan dan menciptakan 200 ribu lapangan kerja (2017-2022).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4: 2017 -->
+                    <div class="relative z-10 mb-12 flex flex-col md:flex-row items-center justify-between group">
+                        <div
+                            class="order-3 md:order-1 md:w-5/12 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-okoce-red hover:shadow-xl transition-shadow md:text-right">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Program dimulai di 44 kecamatan di Jakarta dengan <strong>Kurikulum 7 TOP</strong> (7
+                                Tahapan OK OCE Prima): Pendaftaran, Pelatihan, Pendampingan, Perizinan, Pemasaran,
+                                Pencatatan Keuangan, dan Akses Permodalan.
+                            </p>
+                        </div>
+                        <div class="order-2 md:w-2/12 flex justify-center py-4 md:py-0">
+                            <div
+                                class="w-8 h-8 bg-okoce-red rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-3 md:w-5/12 text-center md:text-left px-6">
+                            <h3 class="text-3xl font-bold text-okoce-red mb-2">2017</h3>
+                            <p class="text-gray-500 font-medium">Implementasi 7 TOP</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5: 2018 -->
+                    <div class="relative z-10 mb-12 flex flex-col md:flex-row items-center justify-between group">
+                        <div class="order-1 md:w-5/12 text-center md:text-right px-6">
+                            <h3 class="text-3xl font-bold text-okoce-blue mb-2">2018</h3>
+                            <p class="text-gray-500 font-medium">Gerakan Nasional</p>
+                        </div>
+                        <div class="order-1 md:w-2/12 flex justify-center py-4 md:py-0">
+                            <div
+                                class="w-8 h-8 bg-okoce-blue rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div
+                            class="order-1 md:w-5/12 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-okoce-blue hover:shadow-xl transition-shadow md:text-left">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Program OK OCE meluas ke seluruh Indonesia sebagai program calon wakil presiden Sandiaga
+                                Uno dengan target 2 juta lapangan kerja. Meskipun tidak terpilih, Gerakan OK OCE terus
+                                berjalan secara mandiri dan berhasil memenuhi janji penciptaan lapangan kerja tersebut.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 6: 2023 -->
+                    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between group">
+                        <div
+                            class="order-3 md:order-1 md:w-5/12 bg-white p-6 rounded-2xl shadow-lg border-l-4 border-okoce-red hover:shadow-xl transition-shadow md:text-right">
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                OK OCE telah menciptakan <strong>1,5 juta lapangan kerja</strong> dan kini diterapkan di
+                                seluruh Indonesia melalui lebih dari <strong>197 komunitas penggerak</strong>.
+                            </p>
+                        </div>
+                        <div class="order-2 md:w-2/12 flex justify-center py-4 md:py-0">
+                            <div
+                                class="w-8 h-8 bg-okoce-red rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300">
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-3 md:w-5/12 text-center md:text-left px-6">
+                            <h3 class="text-3xl font-bold text-okoce-red mb-2">2023</h3>
+                            <p class="text-gray-500 font-medium">Dampak Luas</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    <!-- Brand -->
+                    <div>
+                        <a href="index.html" class="text-3xl font-bold flex items-center gap-2 mb-6">
+                            <span class="text-okoce-blue">OK</span><span class="text-okoce-red">OCE</span>
+                        </a>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Gerakan sosial penciptaan lapangan kerja berbasis wirausaha yang mendunia.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-okoce-blue transition-colors">
+                                <span class="sr-only">Facebook</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-okoce-red transition-colors">
+                                <span class="sr-only">Instagram</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Links 1 -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Tentang Kami</h4>
+                        <ul class="space-y-4">
+                            <li><a href="profile.html" class="text-gray-400 hover:text-white transition-colors">Profil
+                                    OK OCE</a></li>
+                            <li><a href="visi-misi.html" class="text-gray-400 hover:text-white transition-colors">Visi &
+                                    Misi</a></li>
+                            <li><a href="structure.html"
+                                    class="text-gray-400 hover:text-white transition-colors">Struktur Organisasi</a>
+                            </li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mitra Kerjasama</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Links 2 -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Program</h4>
+                        <ul class="space-y-4">
+                            <li><a href="index.html#7-tahapan"
+                                    class="text-gray-400 hover:text-white transition-colors">7 Tahapan OK OCE</a></li>
+                            <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors">Pelatihan
+                                    & Workshop</a></li>
+                            <li><a href="modal-berkah.html"
+                                    class="text-gray-400 hover:text-white transition-colors">Permodalan</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pemasaran</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Hubungi Kami</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-gray-400">
+                                <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Jl. Tebet Timur Dalam Raya No.15, Tebet, Jakarta Selatan</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-400">
+                                <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span>info@okoce.net</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-400">
+                                <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <span>(021) 1234-5678</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                    <p>&copy; 2024 Gerakan OK OCE. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script>
+            // Founder Carousel Script
+            document.addEventListener('DOMContentLoaded', () => {
+                const slides = document.querySelectorAll('.founder-slide');
+                const dots = document.querySelectorAll('.founder-dot');
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        if (i === index) {
+                            slide.classList.remove('opacity-0', 'invisible');
+                            slide.classList.add('opacity-100', 'visible');
+                            dots[i].classList.remove('bg-gray-300');
+                            dots[i].classList.add('bg-okoce-blue', 'w-4');
+                        } else {
+                            slide.classList.add('opacity-0', 'invisible');
+                            slide.classList.remove('opacity-100', 'visible');
+                            dots[i].classList.add('bg-gray-300');
+                            dots[i].classList.remove('bg-okoce-blue', 'w-4');
+                        }
+                    });
+                    currentIndex = index;
+                }
+
+                function nextSlide() {
+                    let next = currentIndex + 1;
+                    if (next >= totalSlides) next = 0;
+                    showSlide(next);
+                }
+
+                let interval = setInterval(nextSlide, 7000);
+
+                dots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        showSlide(i);
+                        clearInterval(interval);
+                        interval = setInterval(nextSlide, 7000);
+                    });
+                });
+
+                // Init
+                showSlide(0);
+            });
+        </script>
+</body>
+
+</html>

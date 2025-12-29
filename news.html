@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita & Kabar Wirausaha - OK OCE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        okoce: {
+                            blue: '#1c75ac',
+                            red: '#e01f31',
+                            dark: '#1a1a1a',
+                            light: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
+                <span class="text-okoce-blue">OK</span><span class="text-okoce-red">OCE</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <!-- Tentang Kami Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-gray-600 hover:text-okoce-blue font-medium transition-colors">
+                        Tentang Kami
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="profile.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Profil OK
+                            OCE</a>
+                        <a href="visi-misi.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Visi &
+                            Misi</a>
+                        <a href="structure.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Struktur
+                            Organisasi</a>
+                    </div>
+                </div>
+
+                <a href="index.html#7-tahapan"
+                    class="text-gray-600 hover:text-okoce-blue font-medium transition-colors">7 Tahapan</a>
+
+                <!-- Program Dropdown -->
+                <div class="relative group">
+                    <button
+                        class="flex items-center gap-1 text-gray-600 hover:text-okoce-blue font-medium transition-colors">
+                        Program & Event
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="index.html#7-tahapan"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Pelatihan</a>
+                        <a href="events.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Daftar
+                            Event</a>
+                        <a href="penggerak.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Jejaring
+                            Penggerak</a>
+                        <a href="modal-berkah.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Modal
+                            Berkah</a>
+                        <a href="merchandise.html"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Merchandise</a>
+                    </div>
+                </div>
+
+                <!-- Informasi Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 text-okoce-blue font-bold transition-colors">
+                        Informasi
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <a href="news.html" class="block px-4 py-2 bg-blue-50 text-okoce-blue font-semibold">Berita</a>
+                        <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Peluang
+                            Usaha</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Galeri</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 border-l pl-6 border-gray-200">
+                    <a href="#" class="text-gray-600 hover:text-okoce-blue font-medium transition-colors">Masuk</a>
+                    <a href="#"
+                        class="px-5 py-2 bg-okoce-red text-white rounded-full font-medium hover:bg-red-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Daftar</a>
+                </div>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-600 hover:text-okoce-blue focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header Small -->
+    <header class="bg-gray-900 pt-32 pb-16 relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center opacity-20">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <span class="text-okoce-blue font-semibold tracking-wider uppercase mb-2 block">Informasi Terkini</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Berita & Artikel</h1>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow">
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <!-- Fetch Status -->
+                <div id="loading-indicator" class="text-center py-10">
+                    <div
+                        class="inline-block w-8 h-8 border-4 border-okoce-blue border-t-transparent rounded-full animate-spin mb-4">
+                    </div>
+                    <p class="text-gray-500">Memuat berita terbaru...</p>
+                </div>
+
+                <!-- News Grid -->
+                <div id="reals-news-grid" class="grid md:grid-cols-3 gap-8 hidden">
+                    <!-- Dynamic Content will be injected here -->
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="mt-16 flex justify-center items-center gap-2 hidden" id="pagination-container">
+                    <!-- Dynamic Pagination Content -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script to Fetch News with Numbered Pagination -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const newsGrid = document.getElementById('reals-news-grid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const paginationContainer = document.getElementById('pagination-container');
+
+            let currentPage = 1;
+            const perPage = 6;
+            let totalPages = 1;
+            let isLoading = false;
+
+            // Function to fetch posts
+            function fetchPosts(page) {
+                isLoading = true;
+
+                // Show loading indicator, hide grid during transition (optional, but good for UX)
+                newsGrid.classList.add('opacity-50');
+
+                const apiEndpoint = `https://okoce.net/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${page}&_cb=${new Date().getTime()}`;
+
+                fetch(apiEndpoint)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        if (response.headers.has('X-WP-TotalPages')) {
+                            totalPages = parseInt(response.headers.get('X-WP-TotalPages'));
+                        }
+                        return response.json();
+                    })
+                    .then(posts => {
+                        loadingIndicator.classList.add('hidden');
+                        newsGrid.classList.remove('hidden');
+                        newsGrid.classList.remove('opacity-50');
+
+                        // Clear existing content (Replacement logic)
+                        newsGrid.innerHTML = '';
+
+                        if (posts.length > 0) {
+                            renderPosts(posts);
+                            renderPagination(page, totalPages);
+                            paginationContainer.classList.remove('hidden');
+                        } else {
+                            newsGrid.innerHTML = '<p class="col-span-full text-center text-gray-500">Tidak ada berita ditemukan.</p>';
+                            paginationContainer.classList.add('hidden');
+                        }
+
+                        // Scroll to top of grid
+                        if (page > 1) {
+                            document.querySelector('section').scrollIntoView({ behavior: 'smooth' });
+                        }
+
+                        isLoading = false;
+                    })
+                    .catch(error => {
+                        console.error("Fetch error:", error);
+                        loadingIndicator.innerHTML = `<p class="text-red-500">Gagal memuat berita. Silakan coba lagi nanti.</p>`;
+                        isLoading = false;
+                    });
+            }
+
+            function renderPosts(posts) {
+                posts.forEach(post => {
+                    const title = post.title.rendered;
+                    const link = post.link;
+                    const date = new Date(post.date).toLocaleDateString('id-ID', {
+                        day: 'numeric', month: 'long', year: 'numeric'
+                    });
+                    // Handle Image
+                    let imageUrl = 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000'; // Specific business/office fallback
+
+                    // 1. Try Featured Media
+                    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                        imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+                    }
+                    // 2. Try to extract first image from content
+                    else if (post.content && post.content.rendered) {
+                        const imgMatch = post.content.rendered.match(/<img[^>]+src="([^">]+)"/);
+                        if (imgMatch && imgMatch[1]) {
+                            imageUrl = imgMatch[1];
+                        }
+                    }
+
+                    let category = 'Berita';
+                    if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0]) {
+                        category = post._embedded['wp:term'][0][0].name;
+                    }
+
+                    let excerpt = post.excerpt.rendered.replace(/<[^>]*>?/gm, '');
+                    if (excerpt.length > 120) excerpt = excerpt.substring(0, 120) + '...';
+
+                    const cardHtml = `
+                        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-gray-100 cursor-pointer animate-fade-in-up" onclick="window.open('${link}', '_blank')">
+                            <div class="relative aspect-video overflow-hidden">
+                                    <img src="${imageUrl}"
+                                    alt="${title}"
+                                    class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-okoce-blue text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+                                    ${category}
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="text-gray-400 text-xs font-medium mb-3 flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                    ${date}
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-okoce-blue transition-colors line-clamp-2" title="${title}">
+                                    ${title}
+                                </h3>
+                                <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">
+                                    ${excerpt}
+                                </p>
+                                <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-okoce-red font-semibold text-sm group-hover:gap-2 transition-all">
+                                    Baca Selengkapnya
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                    newsGrid.innerHTML += cardHtml;
+                });
+            }
+
+            function renderPagination(current, total) {
+                let html = '';
+
+                // Previous Button
+                if (current > 1) {
+                    html += `<button onclick="changePage(${current - 1})" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>`;
+                }
+
+                // Page Numbers logic (Simple version: Show all if < 7, otherwise condensed)
+                // For simplicity in this iteration, we'll try to show 5 pages max around current
+                let startPage = Math.max(1, current - 2);
+                let endPage = Math.min(total, startPage + 4);
+
+                if (endPage - startPage < 4) {
+                    startPage = Math.max(1, endPage - 4);
+                }
+
+                if (startPage > 1) {
+                    html += `<button onclick="changePage(1)" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors">1</button>`;
+                    if (startPage > 2) html += `<span class="px-2 text-gray-400">...</span>`;
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    const activeClass = i === current
+                        ? 'bg-okoce-blue text-white border-okoce-blue hover:bg-blue-600'
+                        : 'bg-white text-gray-600 border-gray-300 hover:bg-gray-50';
+
+                    html += `<button onclick="changePage(${i})" class="w-10 h-10 flex items-center justify-center rounded-full border ${activeClass} transition-colors font-medium">${i}</button>`;
+                }
+
+                if (endPage < total) {
+                    if (endPage < total - 1) html += `<span class="px-2 text-gray-400">...</span>`;
+                    html += `<button onclick="changePage(${total})" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors">${total}</button>`;
+                }
+
+                // Next Button
+                if (current < total) {
+                    html += `<button onclick="changePage(${current + 1})" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>`;
+                }
+
+                paginationContainer.innerHTML = html;
+            }
+
+            // Expose function to global scope so HTML onclick attributes can see it
+            window.changePage = function (page) {
+                if (page === currentPage) return;
+                currentPage = page;
+                fetchPosts(page);
+            };
+
+            // Initial Load
+            fetchPosts(currentPage);
+        });
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="text-3xl font-bold flex items-center gap-2 mb-6">
+                        <span class="text-okoce-blue">OK</span><span class="text-okoce-red">OCE</span>
+                    </a>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Gerakan sosial penciptaan lapangan kerja berbasis wirausaha yang mendunia.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-okoce-blue transition-colors">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-okoce-red transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Tentang Kami</h4>
+                    <ul class="space-y-4">
+                        <li><a href="profile.html" class="text-gray-400 hover:text-white transition-colors">Profil OK
+                                OCE</a></li>
+                        <li><a href="visi-misi.html" class="text-gray-400 hover:text-white transition-colors">Visi &
+                                Misi</a></li>
+                        <li><a href="structure.html" class="text-gray-400 hover:text-white transition-colors">Struktur
+                                Organisasi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mitra Kerjasama</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Program</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html#7-tahapan" class="text-gray-400 hover:text-white transition-colors">7
+                                Tahapan OK OCE</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors">Pelatihan &
+                                Workshop</a></li>
+                        <li><a href="modal-berkah.html"
+                                class="text-gray-400 hover:text-white transition-colors">Permodalan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pemasaran</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Jl. Tebet Timur Dalam Raya No.15, Tebet, Jakarta Selatan</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>info@okoce.net</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>(021) 1234-5678</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Gerakan OK OCE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
