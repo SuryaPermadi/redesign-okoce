@@ -34,8 +34,9 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold flex items-center gap-2">
-                <span class="text-okoce-blue">OK</span><span class="text-okoce-red">OCE</span>
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="http://okoce.net/wp-content/uploads/2021/04/Logo-okoce-02.png" alt="OK OCE Logo"
+                    class="h-8 md:h-10">
             </a>
             <div class="hidden md:flex items-center gap-8">
                 <!-- Tentang Kami Dropdown -->
@@ -148,41 +149,137 @@
 
     <main class="flex-grow py-20">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Product 1 -->
-                <div id="product-1" data-product-name="Kaos Premium OK OCE"
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1: Polo OK OCE + Gerakan Sosial -->
+                <div id="product-1" data-product-name="Polo OK OCE + Gerakan Sosial"
                     class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
                     <div class="relative aspect-square overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800"
-                            alt="Kaos Premium OK OCE"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div
-                            class="absolute top-4 right-4 bg-okoce-red text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
-                            Best Seller</div>
+                        <img src="https://okoce.net/wp-content/uploads/2022/03/polo-02-scaled.jpg"
+                            alt="Polo OK OCE + Gerakan Sosial"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            id="img-product-1">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-gray-900">Kaos Premium OK OCE</h3>
+                            <h3 class="text-xl font-bold text-gray-900">Polo OK OCE + Gerakan Sosial</h3>
                             <span class="text-okoce-blue font-bold text-lg">Rp 150rb</span>
                         </div>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Cotton Combed 30s premium dengan sablon
-                            plastisol tahan lama.</p>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Bahan Polo Lacoste nyaman dengan logo
+                            resmi.</p>
 
                         <div class="space-y-4 mb-6">
                             <div>
                                 <span
-                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Ukuran</span>
-                                <div class="flex gap-2 size-selector">
-                                    <span data-size="S"
-                                        class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-xs font-bold hover:border-okoce-blue hover:text-okoce-blue cursor-pointer transition-colors">S</span>
-                                    <span data-size="M"
-                                        class="w-8 h-8 rounded-lg border-2 border-okoce-blue flex items-center justify-center text-xs font-bold text-okoce-blue cursor-pointer transition-colors active-selection">M</span>
-                                    <span data-size="L"
-                                        class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-xs font-bold hover:border-okoce-blue hover:text-okoce-blue cursor-pointer transition-colors">L</span>
-                                    <span data-size="XL"
-                                        class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-xs font-bold hover:border-okoce-blue hover:text-okoce-blue cursor-pointer transition-colors">XL</span>
+                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Warna</span>
+                                <div class="flex gap-3 color-selector">
+                                    <div data-color="Hitam"
+                                        class="w-6 h-6 rounded-full bg-black ring-2 ring-offset-2 ring-okoce-blue cursor-pointer active-selection"
+                                        title="Hitam"
+                                        data-image="https://okoce.net/wp-content/uploads/2022/03/polo-02-scaled.jpg">
+                                    </div>
+                                    <div data-color="Putih"
+                                        class="w-6 h-6 rounded-full bg-white border border-gray-200 cursor-pointer"
+                                        title="Putih"
+                                        data-image="https://okoce.net/wp-content/uploads/2022/03/polo-putih-03-scaled.jpg">
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <a href="https://api.whatsapp.com/send/?phone=6282210109142&text=Hallo+Saya+tertarik+dengan+Merchandise+Polo+OK+OCE+%2B+Gerakan+Sosial&type=phone_number&app_absent=0"
+                            class="block w-full py-3 bg-okoce-blue text-white rounded-xl font-bold text-center hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform active:scale-95">
+                            <i class="fab fa-whatsapp mr-2"></i> Beli Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Hoodie OK OCE + Gerakan Sosial -->
+                <div id="product-2" data-product-name="Hoodie OK OCE + Gerakan Sosial"
+                    class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100">
+                        <img src="https://okoce.net/wp-content/uploads/2022/03/hoodie-01-1536x1536.jpg"
+                            alt="Hoodie OK OCE + Gerakan Sosial"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">Hoodie OK OCE + Gerakan Sosial</h3>
+                            <span class="text-okoce-blue font-bold text-lg">Rp 150rb</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Bahan Hoodie Lacoste premium yang hangat
+                            dan stylish.</p>
+
+                        <div class="space-y-4 mb-6">
+                            <div>
+                                <span
+                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Warna</span>
+                                <div class="flex gap-3 color-selector">
+                                    <div data-color="Hitam"
+                                        class="w-6 h-6 rounded-full bg-black ring-2 ring-offset-2 ring-okoce-blue cursor-pointer active-selection"
+                                        title="Hitam"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://api.whatsapp.com/send/?phone=6282210109142&text=Hallo+Saya+tertarik+dengan+Merchandise+Hoodie+OK+OCE+%2B+Gerakan+Sosial&type=phone_number&app_absent=0"
+                            class="block w-full py-3 bg-okoce-blue text-white rounded-xl font-bold text-center hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform active:scale-95">
+                            <i class="fab fa-whatsapp mr-2"></i> Beli Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Hoodie Kerja 4S + OK OCE -->
+                <div id="product-3" data-product-name="Hoodie Kerja 4S + OK OCE"
+                    class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100">
+                        <img src="https://okoce.net/wp-content/uploads/2022/03/hoodie4-01-1536x1536.jpg"
+                            alt="Hoodie Kerja 4S + OK OCE"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">Hoodie Kerja 4S + OK OCE</h3>
+                            <span class="text-okoce-blue font-bold text-lg">Rp 150rb</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Desain eksklusif Kerja 4S dengan bahan
+                            Polo Lacoste.</p>
+
+                        <div class="space-y-4 mb-6">
+                            <div>
+                                <span
+                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Warna</span>
+                                <div class="flex gap-3 color-selector">
+                                    <div data-color="Hitam"
+                                        class="w-6 h-6 rounded-full bg-black ring-2 ring-offset-2 ring-okoce-blue cursor-pointer active-selection"
+                                        title="Hitam"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://api.whatsapp.com/send/?phone=6282210109142&text=Hallo+Saya+tertarik+dengan+Merchandise+Hoodie+Kerja+4S+%2B+OK+OCE&type=phone_number&app_absent=0"
+                            class="block w-full py-3 bg-okoce-blue text-white rounded-xl font-bold text-center hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform active:scale-95">
+                            <i class="fab fa-whatsapp mr-2"></i> Beli Sekarang
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Topi OK OCE + Gerakan Sosial -->
+                <div id="product-4" data-product-name="Topi OK OCE + Gerakan Sosial"
+                    class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative aspect-square overflow-hidden bg-gray-100">
+                        <img src="https://okoce.net/wp-content/uploads/2022/03/Topi-03-scaled.jpg"
+                            alt="Topi OK OCE + Gerakan Sosial"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">Topi OK OCE + Gerakan Sosial</h3>
+                            <span class="text-okoce-blue font-bold text-lg">Rp 90rb</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Bahan Rafel berkualitas dengan sablon
+                            Gerakan Sosial.</p>
+
+                        <div class="space-y-4 mb-6">
                             <div>
                                 <span
                                     class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Warna</span>
@@ -197,145 +294,42 @@
                             </div>
                         </div>
 
-                        <a href="https://wa.me/628123456789?text=Halo%20OK%20OCE,%20saya%20tertarik%20membeli%20Kaos%20Premium%20Hitam%20Ukuran%20M"
+                        <a href="https://api.whatsapp.com/send/?phone=6282210109142&text=Hallo+Saya+tertarik+dengan+Merchandise+Topi+OK+OCE+%2B+Gerakan+Sosial&type=phone_number&app_absent=0"
                             class="block w-full py-3 bg-okoce-blue text-white rounded-xl font-bold text-center hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform active:scale-95">
                             <i class="fab fa-whatsapp mr-2"></i> Beli Sekarang
                         </a>
                     </div>
                 </div>
 
-                <!-- Product 2 -->
-                <div id="product-2" data-product-name="Hoodie OK OCE Official"
+                <!-- Product 5: Tumbler OK OCE -->
+                <div id="product-5" data-product-name="Tumbler OK OCE"
                     class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
                     <div class="relative aspect-square overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=800"
-                            alt="Hoodie OK OCE Official"
+                        <img src="https://okoce.net/wp-content/uploads/2022/03/Thumbler-01-1536x1536.jpg"
+                            alt="Tumbler OK OCE"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-gray-900">Hoodie OK OCE Official</h3>
-                            <span class="text-okoce-blue font-bold text-lg">Rp 250rb</span>
+                            <h3 class="text-xl font-bold text-gray-900">Tumbler OK OCE</h3>
+                            <span class="text-okoce-blue font-bold text-lg">Rp 150rb</span>
                         </div>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Fleece Cotton hangat dengan desain
-                            minimalis dan ritsleting premium.</p>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Tumbler panas dengan fitur identifikasi
+                            suhu digital.</p>
 
                         <div class="space-y-4 mb-6">
                             <div>
                                 <span
-                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Ukuran</span>
-                                <div class="flex gap-2 size-selector">
-                                    <span data-size="M"
-                                        class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-xs font-bold hover:border-okoce-blue hover:text-okoce-blue cursor-pointer transition-colors">M</span>
-                                    <span data-size="L"
-                                        class="w-8 h-8 rounded-lg border-2 border-okoce-blue flex items-center justify-center text-xs font-bold text-okoce-blue cursor-pointer transition-colors active-selection">L</span>
-                                    <span data-size="XL"
-                                        class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-xs font-bold hover:border-okoce-blue hover:text-okoce-blue cursor-pointer transition-colors">XL</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span
-                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Warna</span>
-                                <div class="flex gap-3 color-selector">
-                                    <div data-color="Navy"
-                                        class="w-6 h-6 rounded-full bg-blue-900 ring-2 ring-offset-2 ring-okoce-blue cursor-pointer active-selection"
-                                        title="Navy"></div>
-                                    <div data-color="Abu-abu" class="w-6 h-6 rounded-full bg-gray-400 cursor-pointer"
-                                        title="Abu-abu"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="https://wa.me/628123456789?text=Halo%20OK%20OCE,%20saya%20tertarik%20membeli%20Hoodie%20Navy%20Ukuran%20L"
-                            class="block w-full py-3 bg-okoce-blue text-white rounded-xl font-bold text-center hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform active:scale-95">
-                            <i class="fab fa-whatsapp mr-2"></i> Beli Sekarang
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div id="product-3" data-product-name="Tumbler Stainless"
-                    class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                    <div class="relative aspect-square overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1544003484-3ce18479ac49?auto=format&fit=crop&q=80&w=800"
-                            alt="Tumbler Stainless OK OCE"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-gray-900">Tumbler Stainless</h3>
-                            <span class="text-okoce-blue font-bold text-lg">Rp 125rb</span>
-                        </div>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Tahan panas dan dingin selama 12 jam.
-                            Kapasitas 500ml.</p>
-
-                        <div class="space-y-4 mb-6">
-                            <div>
-                                <span
-                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Kapasitas</span>
+                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Fitur</span>
                                 <div class="flex gap-2">
                                     <span
-                                        class="px-3 py-1 rounded-lg border-2 border-okoce-blue text-xs font-bold text-okoce-blue">500ml</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span
-                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Warna</span>
-                                <div class="flex gap-3 color-selector">
-                                    <div data-color="Hitam"
-                                        class="w-6 h-6 rounded-full bg-okoce-dark ring-2 ring-offset-2 ring-okoce-blue cursor-pointer active-selection"
-                                        title="Hitam"></div>
+                                        class="px-3 py-1 rounded-lg border-2 border-okoce-blue text-xs font-bold text-okoce-blue">Digital
+                                        Temp</span>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="https://wa.me/628123456789?text=Halo%20OK%20OCE,%20saya%20tertarik%20membeli%20Tumbler%20Stainless%20Hitam"
-                            class="block w-full py-3 bg-okoce-blue text-white rounded-xl font-bold text-center hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform active:scale-95">
-                            <i class="fab fa-whatsapp mr-2"></i> Beli Sekarang
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div id="product-4" data-product-name="Topi OK OCE Clip"
-                    class="product-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                    <div class="relative aspect-square overflow-hidden bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&q=80&w=800"
-                            alt="Topi OK OCE Clip"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-gray-900">Topi OK OCE Clip</h3>
-                            <span class="text-okoce-blue font-bold text-lg">Rp 85rb</span>
-                        </div>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Bahan Twill premium dengan klip adjustable
-                            dan bordir rapi.</p>
-
-                        <div class="space-y-4 mb-6">
-                            <div>
-                                <span
-                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Model</span>
-                                <div class="flex gap-2">
-                                    <span
-                                        class="px-3 py-1 rounded-lg border-2 border-okoce-blue text-xs font-bold text-okoce-blue">Adjustable</span>
-                                </div>
-                            </div>
-                            <div>
-                                <span
-                                    class="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Warna</span>
-                                <div class="flex gap-3 color-selector">
-                                    <div data-color="Hitam"
-                                        class="w-6 h-6 rounded-full bg-black ring-2 ring-offset-2 ring-okoce-blue cursor-pointer active-selection"
-                                        title="Hitam"></div>
-                                    <div data-color="Putih"
-                                        class="w-6 h-6 rounded-full bg-white border border-gray-200 cursor-pointer"
-                                        title="Putih"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="https://wa.me/628123456789?text=Halo%20OK%20OCE,%20saya%20tertarik%20membeli%20Topi%20Hitam"
+                        <a href="https://api.whatsapp.com/send/?phone=6282210109142&text=Hallo+Saya+tertarik+dengan+Merchandise+Tumbler+OK+OCE&type=phone_number&app_absent=0"
                             class="block w-full py-3 bg-okoce-blue text-white rounded-xl font-bold text-center hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform active:scale-95">
                             <i class="fab fa-whatsapp mr-2"></i> Beli Sekarang
                         </a>
@@ -358,8 +352,9 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <!-- Brand -->
                 <div>
-                    <a href="index.html" class="text-3xl font-bold flex items-center gap-2 mb-6">
-                        <span class="text-okoce-blue">OK</span><span class="text-okoce-red">OCE</span>
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="http://okoce.net/wp-content/uploads/2021/04/Logo-okoce-02.png" alt="OK OCE Logo"
+                            class="h-12 bg-white rounded-lg p-1">
                     </a>
                     <p class="text-gray-400 leading-relaxed mb-6">
                         Gerakan sosial penciptaan lapangan kerja berbasis wirausaha yang mendunia.
@@ -449,18 +444,27 @@
         document.querySelectorAll('.product-card').forEach(card => {
             const sizeButtons = card.querySelectorAll('.size-selector [data-size]');
             const colorButtons = card.querySelectorAll('.color-selector [data-color]');
-            const buyButton = card.querySelector('a[href^="https://wa.me"]');
+            const buyButton = card.querySelector('a[href^="https://api.whatsapp.com"]');
             const productName = card.dataset.productName;
 
             function updateWaLink() {
                 const selectedSize = card.querySelector('.size-selector .active-selection');
                 const selectedColor = card.querySelector('.color-selector .active-selection');
 
-                let message = `Halo OK OCE, saya tertarik membeli ${productName}`;
-                if (selectedColor) message += ` Warna ${selectedColor.dataset.color}`;
-                if (selectedSize) message += ` Ukuran ${selectedSize.dataset.size}`;
+                let message = `Hallo Saya tertarik dengan Merchandise ${productName}`;
+                let details = [];
+                if (selectedColor) details.push(`Warna ${selectedColor.dataset.color}`);
+                if (selectedSize) details.push(`Ukuran ${selectedSize.dataset.size}`);
 
-                buyButton.href = `https://wa.me/628123456789?text=${encodeURIComponent(message)}`;
+                if (details.length > 0) {
+                    message += ` (${details.join(', ')})`;
+                }
+
+                const phoneNumber = '6282210109142';
+                // Encode and replace %20 with + to match user preference/common standard
+                const encodedMessage = encodeURIComponent(message).replace(/%20/g, '+');
+
+                buyButton.href = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}&type=phone_number&app_absent=0`;
             }
 
             sizeButtons.forEach(btn => {
@@ -483,6 +487,15 @@
                     });
                     btn.classList.add('ring-2', 'ring-offset-2', 'ring-okoce-blue', 'active-selection');
                     btn.classList.remove('border', 'border-gray-200');
+
+                    // Update Image if data-image attribute exists
+                    if (btn.dataset.image) {
+                        const img = card.querySelector('img');
+                        if (img) {
+                            img.src = btn.dataset.image;
+                        }
+                    }
+
                     updateWaLink();
                 });
             });
