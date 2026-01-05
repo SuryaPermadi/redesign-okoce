@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal Berkah - OK OCE Global</title>
+    <title>Youth Business Competition - OK OCE</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
         tailwind.config = {
@@ -27,12 +26,18 @@
             }
         }
     </script>
+    <style>
+        .hero-pattern {
+            background-color: #f8f9fa;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237f87cd' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
 </head>
 
-<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+<body class="font-sans text-gray-800 antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2">
                 <img src="http://okoce.net/wp-content/uploads/2021/04/Logo-okoce-02.png" alt="OK OCE Logo"
@@ -53,10 +58,11 @@
                     <div
                         class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                         <a href="profile.html"
-                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Profil OK
-                            OCE</a>
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Profil
+                            OK OCE</a>
                         <a href="visi-misi.html"
-                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Visi & Misi</a>
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Visi &
+                            Misi</a>
                         <a href="structure.html"
                             class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Struktur
                             Organisasi</a>
@@ -66,7 +72,7 @@
                     </div>
                 </div>
 
-                <!-- Program Dropdown (Active via Modal Berkah link) -->
+                <!-- Program Dropdown -->
                 <div class="relative group">
                     <button class="flex items-center gap-1 text-okoce-blue font-bold transition-colors">
                         Program
@@ -79,10 +85,10 @@
                     <div
                         class="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                         <a href="modal-berkah.html"
-                            class="block px-4 py-2 bg-blue-50 text-okoce-blue font-semibold">Modal
+                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Modal
                             Berkah</a>
                         <a href="youth-business-competition.html"
-                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">OK OCE
+                            class="block px-4 py-2 bg-blue-50 text-okoce-blue font-semibold">OK OCE
                             Youth Business Competition</a>
                     </div>
                 </div>
@@ -156,7 +162,6 @@
         <div id="mobile-menu"
             class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 md:hidden pt-28 pb-10 px-6 overflow-y-auto h-screen">
             <div class="flex flex-col gap-6">
-                <!-- Navigation Links -->
                 <a href="index.html"
                     class="text-xl font-bold text-gray-800 hover:text-okoce-blue transition-colors border-b border-gray-100 pb-2">Beranda</a>
 
@@ -192,9 +197,9 @@
                         </svg>
                     </button>
                     <div id="mobile-program" class="pl-4 space-y-3 pt-2 text-lg">
-                        <a href="modal-berkah.html" class="block text-okoce-blue font-bold">Modal Berkah</a>
-                        <a href="youth-business-competition.html" class="block text-gray-600 hover:text-okoce-blue">OK
-                            OCE Youth Business
+                        <a href="modal-berkah.html" class="block text-gray-600 hover:text-okoce-blue">Modal Berkah</a>
+                        <a href="youth-business-competition.html" class="block text-okoce-blue font-bold">OK OCE Youth
+                            Business
                             Competition</a>
                     </div>
                 </div>
@@ -236,219 +241,248 @@
                     </div>
                 </div>
 
-                <!-- Auth Btns Mobile -->
                 <div class="pt-6 mt-4 border-t border-gray-100 flex flex-col gap-4">
-                    <a href="#"
+                    <a href="https://ecsys.okoce.net/login"
                         class="w-full py-3 text-center rounded-full font-bold text-gray-600 hover:bg-gray-50 border border-gray-200">Masuk</a>
                     <a href="https://ecsys.okoce.net/register"
                         class="w-full py-3 text-center rounded-full font-bold bg-okoce-red text-white hover:bg-red-700 shadow-lg">Daftar</a>
                 </div>
             </div>
-
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="bg-gray-900 pt-32 pb-16 relative overflow-hidden">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-pattern">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="inline-block px-4 py-2 bg-red-50 text-okoce-red rounded-full text-sm font-semibold mb-6 tracking-wide uppercase">
+                    Kompetisi Bisnis Pemuda Terbesar</div>
+                <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8">
+                    OK OCE Youth <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-okoce-blue to-okoce-red">Business
+                        Competition</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                    Wadahnya para pemuda kreatif Indonesia untuk menunjukkan inovasi bisnis mereka.
+                    Jadilah bagian dari perubahan dan menangkan total hadiah jutaan rupiah serta pendampingan eksklusif.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://bit.ly/DAFTAROOYBC2025" target="_blank"
+                        class="px-10 py-4 bg-okoce-blue text-white rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-xl hover:shadow-blue-500/30">
+                        Daftar kompetisi
+                    </a>
+                    <a href="https://okoce.net/wp-content/uploads/2024/12/Buku-Panduan-OOYBC-2025.pdf" target="_blank"
+                        class="px-10 py-4 bg-white text-gray-700 border border-gray-200 rounded-full font-bold text-lg hover:bg-gray-50 transition-all shadow-sm flex items-center justify-center gap-2">
+                        <i class="fas fa-download text-okoce-red"></i>
+                        Unduh Buku Panduan
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decoration -->
+        <div class="absolute top-1/2 left-0 w-64 h-64 bg-okoce-blue/5 rounded-full blur-3xl -translate-x-1/2"></div>
         <div
-            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1573161158365-598e9aa516e1?auto=format&fit=crop&q=80&w=1600')] bg-cover bg-center opacity-20">
+            class="absolute bottom-0 right-0 w-96 h-96 bg-okoce-red/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
         </div>
-        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
-            <span class="text-okoce-blue font-semibold tracking-wider uppercase mb-2 block">Program Modal</span>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Modal Berkah</h1>
-            <p class="text-gray-300 text-lg max-w-2xl">
-                Solusi pembiayaan berbasis syariah untuk mendukung UMKM menghadapi keterbatasan modal dalam
-                mengembangkan usaha.
-            </p>
-        </div>
-    </header>
+    </section>
 
-    <main class="flex-grow">
-        <!-- Introduction Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-6 leading-tight">
-                            Memperluas Akses <span class="text-okoce-blue">Permodalan</span> untuk Semua
-                        </h2>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Banyak pelaku UMKM di Indonesia memiliki potensi besar namun terhambat oleh keterbatasan
-                            modal dan akses ke lembaga keuangan formal. program <strong>Modal Berkah</strong> hadir
-                            sebagai jembatan untuk memberikan solusi pembiayaan yang mudah, terjangkau, dan sesuai
-                            prinsip keberkahan.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3">
-                                <div
-                                    class="w-6 h-6 bg-blue-100 text-okoce-blue rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-gray-700">Persyaratan yang mudah dan fleksibel</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <div
-                                    class="w-6 h-6 bg-blue-100 text-okoce-blue rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-gray-700">Proses pengajuan yang cepat</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <div
-                                    class="w-6 h-6 bg-blue-100 text-okoce-blue rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span class="text-gray-700">Pendampingan bisnis berkelanjutan</span>
-                            </li>
-                        </ul>
+    <!-- Categories Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Kategori Kompetisi</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Terdapat dua kategori utama yang bisa kamu ikuti sesuai
+                    dengan tahapan bisnis yang sedang kamu jalani.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                <!-- Business Idea -->
+                <div
+                    class="bg-blue-50/50 p-10 rounded-3xl border border-blue-100 hover:shadow-2xl hover:shadow-blue-200/50 transition-all group">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-okoce-blue shadow-sm mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-lightbulb text-3xl"></i>
                     </div>
-                    <div class="relative">
-                        <div
-                            class="rounded-3xl overflow-hidden shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
-                            <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800"
-                                alt="UMKM Business" class="w-full">
-                        </div>
-                        <div class="absolute -bottom-6 -left-6 bg-okoce-red p-6 rounded-2xl shadow-xl hidden md:block">
-                            <p class="text-white font-bold text-2xl">Syariah</p>
-                            <p class="text-white/80 text-sm italic">Berkah & Amanah</p>
-                        </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Business Idea</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Untuk kamu yang memiliki ide inovatif namun belum direalisasikan. Fokus pada solusi masalah,
+                        kreativitas, dan rencana implementasi.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <i class="fas fa-check-circle text-okoce-blue"></i> Rencana Bisnis Belum Berjalan
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <i class="fas fa-check-circle text-okoce-blue"></i> Inovasi Strategik
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <i class="fas fa-check-circle text-okoce-blue"></i> Potensi Dampak Sosial
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Business Running -->
+                <div
+                    class="bg-red-50/50 p-10 rounded-3xl border border-red-100 hover:shadow-2xl hover:shadow-red-200/50 transition-all group">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-okoce-red shadow-sm mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-rocket text-3xl"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Business Running</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Untuk kamu yang sudah menjalankan bisnis maksimal 2 tahun. Menilai pertumbuhan, skalabilitas,
+                        dan pengelolaan operasional.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <i class="fas fa-check-circle text-okoce-red"></i> Bisnis Sedang Berjalan
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <i class="fas fa-check-circle text-okoce-red"></i> Omzet < Rp 500 Juta/Tahun </li>
+                        <li class="flex items-center gap-3 text-sm font-medium text-gray-700">
+                            <i class="fas fa-check-circle text-okoce-red"></i> Rencana Ekspansi Nyata
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Features Grid -->
-        <section class="py-20 bg-okoce-light">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Keunggulan Program</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Kami memberikan lebih dari sekadar modal, kami memberikan
-                        dukungan untuk pertumbuhan jangka panjang usaha Anda.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Feature 1 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-okoce-blue hover:-translate-y-2 transition-all duration-300">
-                        <div
-                            class="w-14 h-14 bg-blue-50 text-okoce-blue rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                            <i class="fas fa-hand-holding-dollar"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Pembiayaan Syariah</h3>
-                        <p class="text-gray-600">Sistem bagi hasil yang adil dan transparan, tanpa bunga, sesuai dengan
-                            prinsip ekonomi syariah.</p>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-okoce-red hover:-translate-y-2 transition-all duration-300">
-                        <div
-                            class="w-14 h-14 bg-red-50 text-okoce-red rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Proses Cepat</h3>
-                        <p class="text-gray-600">Verifikasi data yang efisien sehingga Anda bisa segera mendapatkan
-                            modal untuk kebutuhan mendesak usaha.</p>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div
-                        class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-okoce-blue hover:-translate-y-2 transition-all duration-300">
-                        <div
-                            class="w-14 h-14 bg-blue-50 text-okoce-blue rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                            <i class="fas fa-users-gear"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">Pendampingan</h3>
-                        <p class="text-gray-600">Penerima manfaat program mendapatkan akses ke pelatihan dan
-                            pendampingan 7 Tahapan OK OCE.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Application Steps -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Cara Mengajukan</h2>
-                    <p class="text-gray-600">Alur sederhana untuk mendapatkan dukungan permodalan.</p>
-                </div>
-                <div class="max-w-4xl mx-auto">
-                    <div class="space-y-12">
-                        <!-- Step 1 -->
-                        <div class="flex flex-col md:flex-row gap-8 items-start relative">
+    <!-- Requirements Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Syarat & Ketentuan Umum</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100">
                             <div
-                                class="w-12 h-12 bg-okoce-blue text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl z-10">
+                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-okoce-blue flex-shrink-0">
                                 1</div>
-                            <div class="hidden md:block absolute top-12 left-6 w-0.5 h-full bg-gray-100 -ml-[1px]">
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Pendaftaran Online</h3>
-                                <p class="text-gray-600 leading-relaxed">Isi formulir pengajuan melalui website resmi OK
-                                    OCE atau aplikasi mobile dengan melampirkan profil usaha singkat.</p>
-                            </div>
+                            <p class="text-gray-600">Terbuka untuk Warga Negara Indonesia (WNI) berusia 17-30 tahun.</p>
                         </div>
-
-                        <!-- Step 2 -->
-                        <div class="flex flex-col md:flex-row gap-8 items-start relative">
+                        <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100">
                             <div
-                                class="w-12 h-12 bg-okoce-blue text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl z-10">
+                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-okoce-blue flex-shrink-0">
                                 2</div>
-                            <div class="hidden md:block absolute top-12 left-6 w-0.5 h-full bg-gray-100 -ml-[1px]">
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Verifikasi & Survey</h3>
-                                <p class="text-gray-600 leading-relaxed">Tim analis kami akan meninjau data Anda dan
-                                    melakukan survey lapangan untuk memahami kebutuhan nyata usaha Anda.</p>
-                            </div>
+                            <p class="text-gray-600">Bisnis tidak mengandung unsur perjudian, MLM, skema piramida, atau
+                                pelanggaran norma hukum.</p>
                         </div>
-
-                        <!-- Step 3 -->
-                        <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100">
                             <div
-                                class="w-12 h-12 bg-okoce-blue text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xl z-10">
+                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-okoce-blue flex-shrink-0">
                                 3</div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Pencairan Modal</h3>
-                                <p class="text-gray-600 leading-relaxed">Setelah disetujui, dana akan dicairkan dan Anda
-                                    secara otomatis tergabung dalam grup pendampingan bisnis.</p>
-                            </div>
+                            <p class="text-gray-600">Dapat diikuti secara individu maupun kelompok (maskimal 3 orang).
+                            </p>
+                        </div>
+                        <div class="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-okoce-blue flex-shrink-0">
+                                4</div>
+                            <p class="text-gray-600">Ide atau bisnis belum pernah memenangkan kompetisi serupa
+                                sebelumnya.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="bg-okoce-blue rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+                <div class="lg:w-1/2 relative">
+                    <img src="https://okoce.net/wp-content/uploads/2026/01/IMG_1214-scaled.jpg"
+                        alt="Youth Business Competition" class="rounded-3xl shadow-2xl">
                     <div
-                        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10">
-                    </div>
-                    <div class="relative z-10">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Siap Mengembangkan Usaha Anda?</h2>
-                        <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
-                            Jangan biarkan keterbatasan modal menghentikan langkah sukses Anda. Bergabunglah dengan
-                            ribuan pengusaha yang telah terbantu.
-                        </p>
-                        <div class="flex flex-col sm:flex-row justify-center gap-4">
-                            <a href="#"
-                                class="px-8 py-4 bg-white text-okoce-blue rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg">
-                                Daftar Sekarang
-                            </a>
-                            <a href="#"
-                                class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-colors">
-                                Tanya Admin
-                            </a>
-                        </div>
+                        class="absolute -bottom-6 -right-6 bg-okoce-red text-white p-8 rounded-2xl shadow-xl hidden sm:block">
+                        <span class="text-4xl font-bold block mb-1">2025</span>
+                        <span class="text-sm font-semibold uppercase tracking-wider">Edisi Terbaru</span>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Linimasa Kompetisi</h2>
+                <div class="w-16 h-1 bg-okoce-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div
+                class="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+                <!-- Item 1 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-okoce-blue text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-all">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-1">
+                            <div class="font-bold text-slate-900">Pendaftaran & Submit Proposal</div>
+                            <time class="font-bold text-okoce-red text-sm">Januari 2025</time>
+                        </div>
+                        <p class="text-slate-500 text-sm">Pengisian formulir online dan unggahan dokumen proposal
+                            bisnis.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-400 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-1">
+                            <div class="font-bold text-slate-900">Seleksi Administratif & Kurasi</div>
+                            <time class="font-bold text-slate-400 text-sm">Februari 2025</time>
+                        </div>
+                        <p class="text-slate-500 text-sm">Penilaian berkas oleh dewan juri profesional sesuai kriteria.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-400 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-1">
+                            <div class="font-bold text-slate-900">Mentoring & Workshop</div>
+                            <time class="font-bold text-slate-400 text-sm">Maret 2025</time>
+                        </div>
+                        <p class="text-slate-500 text-sm">Pembekalan bagi finalis terpilih untuk mempertajam strategi
+                            bisnis.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-400 text-slate-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div
+                        class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between mb-1">
+                            <div class="font-bold text-slate-900">Grand Final & Awarding</div>
+                            <time class="font-bold text-slate-400 text-sm">April 2025</time>
+                        </div>
+                        <p class="text-slate-500 text-sm">Presentasi akhir (pitching) dan pengumuman pemenang kompetisi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto">
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <!-- Brand -->
@@ -463,19 +497,11 @@
                     <div class="flex gap-4">
                         <a href="#"
                             class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-okoce-blue transition-colors">
-                            <span class="sr-only">Facebook</span>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
+                            <i class="fab fa-facebook-f text-lg"></i>
                         </a>
                         <a href="#"
                             class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-okoce-red transition-colors">
-                            <span class="sr-only">Instagram</span>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
+                            <i class="fab fa-instagram text-lg"></i>
                         </a>
                     </div>
                 </div>
@@ -490,22 +516,23 @@
                                 Misi</a></li>
                         <li><a href="structure.html" class="text-gray-400 hover:text-white transition-colors">Struktur
                                 Organisasi</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mitra Kerjasama</a>
-                        </li>
+                        <li><a href="index.html#7-tahapan" class="text-gray-400 hover:text-white transition-colors">7
+                                Tahapan OK OCE</a></li>
                     </ul>
                 </div>
 
                 <!-- Links 2 -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6">Program</h4>
+                    <h4 class="text-lg font-bold mb-6">Program Utama</h4>
                     <ul class="space-y-4">
-                        <li><a href="index.html#7-tahapan" class="text-gray-400 hover:text-white transition-colors">7
-                                Tahapan OK OCE</a></li>
+                        <li><a href="modal-berkah.html" class="text-gray-400 hover:text-white transition-colors">Modal
+                                Berkah</a></li>
+                        <li><a href="youth-business-competition.html"
+                                class="text-white font-semibold transition-colors">Youth Business Competition</a></li>
                         <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors">Pelatihan &
                                 Workshop</a></li>
-                        <li><a href="modal-berkah.html"
-                                class="text-gray-400 hover:text-white transition-colors">Permodalan</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pemasaran</a></li>
+                        <li><a href="penggerak.html" class="text-gray-400 hover:text-white transition-colors">Jejaring
+                                Penggerak</a></li>
                     </ul>
                 </div>
 
@@ -513,30 +540,16 @@
                 <div>
                     <h4 class="text-lg font-bold mb-6">Hubungi Kami</h4>
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-gray-400">
-                            <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
+                        <li class="flex items-start gap-3 text-gray-400 text-sm">
+                            <i class="fas fa-map-marker-alt mt-1 text-okoce-blue"></i>
                             <span>Jl. Tebet Timur Dalam Raya No.15, Tebet, Jakarta Selatan</span>
                         </li>
-                        <li class="flex items-center gap-3 text-gray-400">
-                            <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
+                        <li class="flex items-center gap-3 text-gray-400 text-sm">
+                            <i class="fas fa-envelope text-okoce-blue"></i>
                             <span>info@okoce.net</span>
                         </li>
-                        <li class="flex items-center gap-3 text-gray-400">
-                            <svg class="w-6 h-6 flex-shrink-0 text-okoce-blue" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
+                        <li class="flex items-center gap-3 text-gray-400 text-sm">
+                            <i class="fas fa-phone text-okoce-blue"></i>
                             <span>(021) 1234-5678</span>
                         </li>
                     </ul>
@@ -548,7 +561,20 @@
             </div>
         </div>
     </footer>
+
     <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'bg-white/95');
+                navbar.classList.remove('py-4', 'bg-white/90');
+            } else {
+                navbar.classList.add('py-4', 'bg-white/90');
+                navbar.classList.remove('py-2', 'bg-white/95');
+            }
+        });
+
         // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -560,11 +586,9 @@
                 isMenuOpen = !isMenuOpen;
                 if (isMenuOpen) {
                     mobileMenu.classList.remove('translate-x-full');
-                    // Change icon to close X
                     hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
                 } else {
                     mobileMenu.classList.add('translate-x-full');
-                    // Change icon back to hamburger
                     hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
                 }
             });
