@@ -415,6 +415,16 @@
                 <button class="carousel-dot h-3 rounded-full bg-white/50 transition-all duration-300"
                     data-index="2"></button>
             </div>
+
+            <!-- Carousel Arrows -->
+            <button id="banner-prev"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center transition-all z-30 backdrop-blur-sm group">
+                <i class="fas fa-chevron-left group-hover:-translate-x-1 transition-transform"></i>
+            </button>
+            <button id="banner-next"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center transition-all z-30 backdrop-blur-sm group">
+                <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+            </button>
         </div>
     </section>
 
@@ -1146,12 +1156,65 @@
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', () => {
                     showSlide(i);
-                    clearInterval(autoPlay);
-                    autoPlay = setInterval(() => {
-                        showSlide(currentSlide + 1);
-                    }, 6000);
+                    resetAutoPlay();
                 });
             });
+
+            const prevBtn = document.getElementById('banner-prev');
+            const nextBtn = document.getElementById('banner-next');
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    showSlide(currentSlide - 1);
+                    resetAutoPlay();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    showSlide(currentSlide + 1);
+                    resetAutoPlay();
+                });
+            }
+
+            // Touch/Swipe Support
+            const carouselContainer = document.getElementById('carousel-slides');
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            function handleGesture() {
+                const swipeThreshold = 50;
+                const swipeDistance = touchEndX - touchStartX;
+
+                if (Math.abs(swipeDistance) > swipeThreshold) {
+                    if (swipeDistance > 0) {
+                        // Swiped Right -> Previous Slide
+                        showSlide(currentSlide - 1);
+                    } else {
+                        // Swiped Left -> Next Slide
+                        showSlide(currentSlide + 1);
+                    }
+                    resetAutoPlay();
+                }
+            }
+
+            function resetAutoPlay() {
+                clearInterval(autoPlay);
+                autoPlay = setInterval(() => {
+                    showSlide(currentSlide + 1);
+                }, 6000);
+            }
+
+            if (carouselContainer) {
+                carouselContainer.addEventListener('touchstart', e => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                carouselContainer.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleGesture();
+                }, { passive: true });
+            }
         });
     </script>
 
@@ -1358,11 +1421,11 @@
 
                 <!-- Navigation Arrows -->
                 <button id="scroll-prev"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl border border-gray-100 items-center justify-center text-gray-400 hover:text-okoce-blue hover:border-okoce-blue transition-all z-10 -ml-2 md:-ml-6 group md:flex hidden">
+                    class="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl border border-gray-100 items-center justify-center text-gray-400 hover:text-okoce-blue hover:border-okoce-blue transition-all z-10 -ml-2 md:-ml-6 group md:flex">
                     <i class="fas fa-chevron-left group-hover:-translate-x-1 transition-transform"></i>
                 </button>
                 <button id="scroll-next"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl border border-gray-100 items-center justify-center text-gray-400 hover:text-okoce-blue hover:border-okoce-blue transition-all z-10 -mr-2 md:-mr-6 group md:flex hidden">
+                    class="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl border border-gray-100 items-center justify-center text-gray-400 hover:text-okoce-blue hover:border-okoce-blue transition-all z-10 -mr-2 md:-mr-6 group md:flex">
                     <i class="fas fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
                 </button>
 
@@ -1666,31 +1729,59 @@
                 return card ? card.offsetWidth + 24 : 400; // 24 is the gap (gap-6)
             };
 
-            prevBtn.addEventListener('click', () => {
-                container.scrollBy({
-                    left: -updateScrollAmount(),
-                    behavior: 'smooth'
-                });
-            });
-
-            nextBtn.addEventListener('click', () => {
-                container.scrollBy({
-                    left: updateScrollAmount(),
-                    behavior: 'smooth'
-                });
-            });
-
-            // Update button visibility
-            const updateButtons = () => {
+            prevBtn.addEventListener('click', function () {
                 const scrollLeft = container.scrollLeft;
                 const maxScroll = container.scrollWidth - container.clientWidth;
 
-                // Show/hide based on scroll limits
-                prevBtn.style.opacity = scrollLeft <= 10 ? '0' : '1';
-                prevBtn.style.pointerEvents = scrollLeft <= 10 ? 'none' : 'auto';
+                if (scrollLeft <= 10) {
+                    // Loop to end
+                    container.scrollTo({
+                        left: maxScroll,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    container.scrollBy({
+                        left: -updateScrollAmount(),
+                        behavior: 'smooth'
+                    });
+                }
+            });
 
-                nextBtn.style.opacity = scrollLeft >= maxScroll - 10 ? '0' : '1';
-                nextBtn.style.pointerEvents = scrollLeft >= maxScroll - 10 ? 'none' : 'auto';
+            nextBtn.addEventListener('click', function () {
+                const scrollLeft = container.scrollLeft;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+
+                if (scrollLeft >= maxScroll - 10) {
+                    // Loop to start
+                    container.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    container.scrollBy({
+                        left: updateScrollAmount(),
+                        behavior: 'smooth'
+                    });
+                }
+            });
+
+            // Update button visibility (Simplified for looping)
+            const updateButtons = () => {
+                // In looping mode, buttons are always visible on larger screens
+                // but we might want to hide them if the content doesn't overflow
+                const isOverflowing = container.scrollWidth > container.clientWidth;
+
+                if (isOverflowing) {
+                    prevBtn.style.opacity = '1';
+                    prevBtn.style.pointerEvents = 'auto';
+                    nextBtn.style.opacity = '1';
+                    nextBtn.style.pointerEvents = 'auto';
+                } else {
+                    prevBtn.style.opacity = '0';
+                    prevBtn.style.pointerEvents = 'none';
+                    nextBtn.style.opacity = '0';
+                    nextBtn.style.pointerEvents = 'none';
+                }
             };
 
             container.addEventListener('scroll', updateButtons);
