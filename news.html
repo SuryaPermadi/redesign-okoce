@@ -35,13 +35,13 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2">
                 <img src="http://okoce.net/wp-content/uploads/2021/04/Logo-okoce-02.png" alt="OK OCE Logo"
-                    class="h-8 md:h-10">
+                    class="h-10 md:h-12">
             </a>
-            <div class="hidden md:flex items-center gap-8">
+            <div class="hidden md:flex items-center gap-10">
                 <!-- Tentang Kami Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center gap-1 text-gray-600 hover:text-okoce-blue font-medium transition-colors">
+                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-lg transition-colors">
                         Tentang Kami
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -50,13 +50,11 @@
                         </svg>
                     </button>
                     <div
-                        class="absolute top-full left-0 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        class="absolute top-full left-0 w-56 bg-white rounded-xl shadow-xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                         <a href="profile.html"
-                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Profil OK
+                            class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-okoce-blue font-medium">Profil
+                            OK
                             OCE</a>
-                        <a href="visi-misi.html"
-                            class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Visi &
-                            Misi</a>
                         <a href="structure.html"
                             class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Struktur
                             Organisasi</a>
@@ -69,7 +67,7 @@
                 <!-- Program Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center gap-1 text-gray-600 hover:text-okoce-blue font-medium transition-colors">
+                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-lg transition-colors">
                         Program
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -91,7 +89,7 @@
                 <!-- Acara Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center gap-1 text-gray-600 hover:text-okoce-blue font-medium transition-colors">
+                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-lg transition-colors">
                         Acara
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -109,7 +107,7 @@
 
                 <!-- Informasi Dropdown (Active via Berita/News link) -->
                 <div class="relative group">
-                    <button class="flex items-center gap-1 text-okoce-blue font-bold transition-colors">
+                    <button class="flex items-center gap-1 text-okoce-blue font-bold text-lg transition-colors">
                         Informasi
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -134,11 +132,14 @@
                     </div>
                 </div>
 
-                <div class="flex items-center gap-3 border-l pl-6 border-gray-200">
-                    <a href="https://ecsys.okoce.net/login"
-                        class="text-gray-600 hover:text-okoce-blue font-medium transition-colors">Masuk</a>
-                    <a href="https://ecsys.okoce.net/register"
-                        class="px-5 py-2 bg-okoce-red text-white rounded-full font-medium hover:bg-red-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Daftar</a>
+                <div class="flex items-center border-l pl-6 border-gray-200 ml-2">
+                    <div
+                        class="flex items-center gap-2 border border-gray-100 rounded-full p-2 bg-white shadow-sm hover:shadow-md transition-shadow">
+                        <a href="https://ecsys.okoce.net/login"
+                            class="px-6 py-2.5 text-okoce-blue hover:text-blue-700 font-bold transition-colors text-base">Masuk</a>
+                        <a href="https://ecsys.okoce.net/register"
+                            class="px-8 py-2.5 bg-okoce-red text-white rounded-full font-bold hover:bg-red-700 transition-all shadow-md hover:shadow-lg text-base">Daftar</a>
+                    </div>
                 </div>
             </div>
             <!-- Mobile Menu Button -->
@@ -157,24 +158,25 @@
             <div class="flex flex-col gap-6">
                 <!-- Navigation Links -->
                 <a href="index.html"
-                    class="text-xl font-bold text-gray-800 hover:text-okoce-blue transition-colors border-b border-gray-100 pb-2">Beranda</a>
+                    class="text-xl font-bold text-gray-800 hover:text-okoce-blue transition-colors border-b border-gray-100 pb-3">Beranda</a>
 
                 <!-- Dropdown: Tentang Kami -->
                 <div class="space-y-2">
                     <button onclick="toggleMobileDropdown('mobile-tentang')"
-                        class="flex items-center justify-between w-full text-xl font-bold text-gray-800 hover:text-okoce-blue transition-colors">
+                        class="flex items-center justify-between w-full text-2xl font-black text-gray-800 hover:text-okoce-blue transition-colors">
                         Tentang Kami
-                        <svg id="arrow-mobile-tentang" class="w-5 h-5 transition-transform duration-300" fill="none"
+                        <svg id="arrow-mobile-tentang" class="w-6 h-6 transition-transform duration-300" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div id="mobile-tentang" class="hidden pl-4 space-y-3 pt-2 text-lg">
-                        <a href="profile.html" class="block text-gray-600 hover:text-okoce-blue">Profil OK OCE</a>
-                        <a href="visi-misi.html" class="block text-gray-600 hover:text-okoce-blue">Visi & Misi</a>
-                        <a href="structure.html" class="block text-gray-600 hover:text-okoce-blue">Struktur
+                    <div id="mobile-tentang" class="hidden pl-4 space-y-4 pt-4 text-xl">
+                        <a href="profile.html" class="block text-gray-700 hover:text-okoce-blue font-medium">Profil OK
+                            OCE</a>
+                        <a href="structure.html" class="block text-gray-700 hover:text-okoce-blue font-medium">Struktur
                             Organisasi</a>
-                        <a href="index.html#7-tahapan" class="block text-gray-600 hover:text-okoce-blue">7 Tahapan OK
+                        <a href="index.html#7-tahapan" class="block text-gray-700 hover:text-okoce-blue font-medium">7
+                            Tahapan OK
                             OCE</a>
                     </div>
                 </div>
@@ -223,24 +225,25 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div id="mobile-info" class="pl-4 space-y-3 pt-2 text-lg">
-                        <a href="news.html" class="block text-okoce-blue font-bold">Berita</a>
-                        <a href="#" class="block text-gray-600 hover:text-okoce-blue">Peluang Usaha</a>
-                        <a href="#" class="block text-gray-600 hover:text-okoce-blue">Galeri</a>
+                    <div id="mobile-info" class="pl-4 space-y-4 pt-4 text-xl">
+                        <a href="news.html" class="block text-okoce-blue font-black">Berita</a>
+                        <a href="#" class="block text-gray-700 hover:text-okoce-blue font-medium">Peluang Usaha</a>
+                        <a href="#" class="block text-gray-700 hover:text-okoce-blue font-medium">Galeri</a>
                         <a href="#"
-                            class="block text-gray-600 hover:text-okoce-blue border-t border-gray-100 pt-2">Pelatihan</a>
-                        <a href="penggerak.html" class="block text-gray-600 hover:text-okoce-blue">Jejaring
+                            class="block text-gray-700 hover:text-okoce-blue border-t border-gray-100 pt-4 font-medium">Pelatihan</a>
+                        <a href="penggerak.html" class="block text-gray-700 hover:text-okoce-blue font-medium">Jejaring
                             Penggerak</a>
-                        <a href="merchandise.html" class="block text-gray-600 hover:text-okoce-blue">Merchandise</a>
+                        <a href="merchandise.html"
+                            class="block text-gray-700 hover:text-okoce-blue font-medium">Merchandise</a>
                     </div>
                 </div>
 
                 <!-- Auth Btns Mobile -->
-                <div class="pt-6 mt-4 border-t border-gray-100 flex flex-col gap-4">
+                <div class="pt-8 mt-6 border-t border-gray-100 flex flex-col gap-5">
                     <a href="#"
-                        class="w-full py-3 text-center rounded-full font-bold text-gray-600 hover:bg-gray-50 border border-gray-200">Masuk</a>
+                        class="w-full py-4 text-center rounded-full font-black text-xl text-gray-700 hover:bg-gray-50 border-2 border-gray-200">Masuk</a>
                     <a href="https://ecsys.okoce.net/register"
-                        class="w-full py-3 text-center rounded-full font-bold bg-okoce-red text-white hover:bg-red-700 shadow-lg">Daftar</a>
+                        class="w-full py-4 text-center rounded-full font-black text-xl bg-okoce-red text-white hover:bg-red-700 shadow-xl">Daftar</a>
                 </div>
             </div>
         </div>
@@ -527,8 +530,6 @@
                     <ul class="space-y-4">
                         <li><a href="profile.html" class="text-gray-400 hover:text-white transition-colors">Profil OK
                                 OCE</a></li>
-                        <li><a href="visi-misi.html" class="text-gray-400 hover:text-white transition-colors">Visi &
-                                Misi</a></li>
                         <li><a href="structure.html" class="text-gray-400 hover:text-white transition-colors">Struktur
                                 Organisasi</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mitra Kerjasama</a>
