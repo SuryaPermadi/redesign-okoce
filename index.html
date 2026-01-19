@@ -115,11 +115,11 @@
                 <img src="http://okoce.net/wp-content/uploads/2021/04/Logo-okoce-02.png" alt="OK OCE Logo"
                     class="h-10 md:h-12">
             </a>
-            <div class="hidden md:flex items-center gap-10">
+            <div class="hidden md:flex items-center gap-6">
                 <!-- Tentang Kami Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-lg transition-colors">
+                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-base transition-colors">
                         Tentang Kami
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -144,7 +144,7 @@
                 <!-- Program Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-lg transition-colors">
+                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-base transition-colors">
                         Program
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -166,7 +166,7 @@
                 <!-- Acara Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-lg transition-colors">
+                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-base transition-colors">
                         Acara
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -185,7 +185,7 @@
                 <!-- Informasi Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-lg transition-colors">
+                        class="flex items-center gap-1 text-gray-700 hover:text-okoce-blue font-bold text-base transition-colors">
                         Informasi
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24"
@@ -210,6 +210,12 @@
                             class="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-okoce-blue">Merchandise</a>
                     </div>
                 </div>
+
+                <!-- E-Katalog Link -->
+                <a href="e-katalog.html"
+                    class="flex items-center gap-0 text-gray-700 hover:text-okoce-blue font-bold text-base transition-colors">
+                    E-Katalog
+                </a>
 
                 <div class="flex items-center border-l pl-6 border-gray-200 ml-2">
                     <div
@@ -311,6 +317,11 @@
                         <a href="merchandise.html" class="block text-gray-600 hover:text-okoce-blue">Merchandise</a>
                     </div>
                 </div>
+
+                <!-- E-Katalog Mobile Link -->
+                <a href="e-katalog.html"
+                    class="block text-xl font-bold text-gray-800 hover:text-okoce-blue transition-colors">E-Katalog
+                    UMKM</a>
 
                 <!-- Auth Btns Mobile -->
                 <div class="pt-6 mt-4 border-t border-gray-100 flex flex-col gap-4">
@@ -742,6 +753,172 @@
     </div> -->
     </div>
     </div>
+    </section>
+
+    <!-- E-Katalog Section -->
+    <section id="e-katalog" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-okoce-blue font-bold tracking-wider uppercase mb-2 block">Dukung UMKM Lokal</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Pilihan Produk E-Katalog</h2>
+                <div class="w-16 h-1 bg-okoce-red mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=800"
+                            alt="Produk UMKM"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="e-katalog.html"
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-bold text-sm hover:bg-okoce-blue hover:text-white transition-colors">Lihat
+                                Detail</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="inline-block px-3 py-1 bg-blue-50 text-okoce-blue text-xs font-bold rounded-full">Kuliner</span>
+                            <span class="text-xs text-gray-400">Jakarta</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-1">Keripik Pisang Cavendish</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Camilan sehat dari pisang cavendish pilihan
+                            dengan rasa manis alami tanpa pemanis buatan.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-lg font-bold text-okoce-red">Rp 25.000</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=800"
+                            alt="Produk UMKM"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="e-katalog.html"
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-bold text-sm hover:bg-okoce-blue hover:text-white transition-colors">Lihat
+                                Detail</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="inline-block px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold rounded-full">Fashion</span>
+                            <span class="text-xs text-gray-400">Bandung</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-1">Hijab Voal Premium</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Hijab segi empat bahan voal premium yang
+                            mudah dibentuk, tidak panas, dan nyaman dipakai seharian.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-lg font-bold text-okoce-red">Rp 75.000</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1513118172236-00b7cc57e1fa?auto=format&fit=crop&q=80&w=800"
+                            alt="Produk UMKM"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="e-katalog.html"
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-bold text-sm hover:bg-okoce-blue hover:text-white transition-colors">Lihat
+                                Detail</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="inline-block px-3 py-1 bg-green-50 text-green-600 text-xs font-bold rounded-full">Craft</span>
+                            <span class="text-xs text-gray-400">Bali</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-1">Tas Anyaman Rotan</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Tas tangan estetik buatan pengrajin lokal
+                            Bali. Cocok untuk OOTD liburan atau santai.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-lg font-bold text-okoce-red">Rp 150.000</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="relative h-64 overflow-hidden bg-gray-100">
+                        <img src="https://images.unsplash.com/photo-1509358277222-3af0b147814d?auto=format&fit=crop&q=80&w=800"
+                            alt="Produk UMKM"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <a href="e-katalog.html"
+                                class="px-6 py-2 bg-white text-gray-900 rounded-full font-bold text-sm hover:bg-okoce-blue hover:text-white transition-colors">Lihat
+                                Detail</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="inline-block px-3 py-1 bg-yellow-50 text-yellow-600 text-xs font-bold rounded-full">Jasa</span>
+                            <span class="text-xs text-gray-400">Surabaya</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-1">Jasa Desain Logo UMKM</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Layanan pembuatan logo profesional untuk
+                            branding usaha Anda. Cepat, murah, dan berkualitas.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-lg font-bold text-okoce-red">Rp 100.000</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="e-katalog.html"
+                    class="inline-flex items-center gap-2 px-8 py-4 bg-okoce-blue text-white rounded-full font-bold hover:bg-blue-800 transition-all shadow-lg hover:shadow-blue-500/30 group">
+                    <span class="group-hover:mr-1 transition-all">Lihat Semua Produk</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Jejaring Penggerak Section -->
