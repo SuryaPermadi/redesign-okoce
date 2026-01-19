@@ -314,23 +314,9 @@
                 <!-- Products will be dynamically rendered here -->
             </div>
 
-            <!-- Pagination (Static for now) -->
-            <div class="mt-16 flex justify-center gap-2">
-                <button
-                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-white hover:shadow-md transition-all">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button
-                    class="w-10 h-10 rounded-full bg-okoce-blue text-white shadow-lg flex items-center justify-center font-bold">1</button>
-                <button
-                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-white hover:shadow-md transition-all">2</button>
-                <button
-                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-white hover:shadow-md transition-all">3</button>
-                <span class="w-10 h-10 flex items-center justify-center text-gray-400">...</span>
-                <button
-                    class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-white hover:shadow-md transition-all">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+            <!-- Pagination -->
+            <div id="paginationContainer" class="mt-16 flex justify-center gap-2">
+                <!-- Pagination buttons will be dynamically rendered here -->
             </div>
         </div>
     </section>
@@ -501,6 +487,42 @@
                 location: "Jakarta",
                 whatsapp: "628123456789",
                 image: "https://images.unsplash.com/photo-1601056586648-5c4e9c708035?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 10,
+                title: "Kopi Arabika ASDAS",
+                price: "70.000",
+                category: "kuliner",
+                location: "Jakarta",
+                whatsapp: "628123456789",
+                image: "https://images.unsplash.com/photo-1601056586648-5c4e9c708035?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 11,
+                title: "Kopi Arabika ASJDNJK",
+                price: "70.000",
+                category: "kuliner",
+                location: "Jakarta",
+                whatsapp: "628123456789",
+                image: "https://images.unsplash.com/photo-1601056586648-5c4e9c708035?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 12,
+                title: "Kopi Arabika AKJSDJA",
+                price: "70.000",
+                category: "kuliner",
+                location: "Jakarta",
+                whatsapp: "628123456789",
+                image: "https://images.unsplash.com/photo-1601056586648-5c4e9c708035?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 13,
+                title: "Kopi Arabika KAJSDJKA",
+                price: "70.000",
+                category: "kuliner",
+                location: "Jakarta",
+                whatsapp: "628123456789",
+                image: "https://images.unsplash.com/photo-1601056586648-5c4e9c708035?auto=format&fit=crop&q=80&w=800"
             }
         ];
 
@@ -534,18 +556,28 @@
             }
         }
 
-        // Render Functions
+        // State
         const productGrid = document.getElementById('productGrid');
+        const paginationContainer = document.getElementById('paginationContainer');
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
-        let currentFilter = 'all';
 
-        function renderProducts(productList) {
+        const itemsPerPage = 12;
+        let currentPage = 1;
+        let currentFilter = 'all';
+        let filteredProducts = [...products];
+
+        function renderProducts() {
             if (!productGrid) return;
 
             productGrid.innerHTML = '';
 
-            if (productList.length === 0) {
+            // Calculate slice
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pagedProducts = filteredProducts.slice(start, end);
+
+            if (filteredProducts.length === 0) {
                 productGrid.innerHTML = `
                     <div class="col-span-full py-20 text-center">
                         <div class="bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -558,7 +590,7 @@
                 return;
             }
 
-            productList.forEach(product => {
+            pagedProducts.forEach(product => {
                 const card = `
                     <div class="product-card bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden border border-gray-100">
                         <div class="relative h-60 bg-gray-100 overflow-hidden">
@@ -586,13 +618,69 @@
                 `;
                 productGrid.innerHTML += card;
             });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            if (!paginationContainer) return;
+
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            paginationContainer.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            // Simple Pagination with dots or dynamic range could be here, 
+            // but for 13 items (2 pages) direct buttons are fine.
+
+            // Prev Button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = `w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center transition-all ${currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-500 hover:bg-white hover:shadow-md'}`;
+            prevBtn.innerHTML = '<i class="fas fa-chevron-left text-sm"></i>';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderProducts();
+                    window.scrollTo({ top: productGrid.offsetTop - 200, behavior: 'smooth' });
+                }
+            };
+            paginationContainer.appendChild(prevBtn);
+
+            // Page Numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                const isActive = i === currentPage;
+                pageBtn.className = `w-10 h-10 rounded-full flex items-center justify-center font-bold transition-all ${isActive ? 'bg-okoce-blue text-white shadow-md' : 'border border-gray-200 text-gray-600 hover:bg-white hover:shadow-md'}`;
+                pageBtn.innerText = i;
+                pageBtn.onclick = () => {
+                    currentPage = i;
+                    renderProducts();
+                    window.scrollTo({ top: productGrid.offsetTop - 200, behavior: 'smooth' });
+                };
+                paginationContainer.appendChild(pageBtn);
+            }
+
+            // Next Button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = `w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center transition-all ${currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'text-gray-500 hover:bg-white hover:shadow-md'}`;
+            nextBtn.innerHTML = '<i class="fas fa-chevron-right text-sm"></i>';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderProducts();
+                    window.scrollTo({ top: productGrid.offsetTop - 200, behavior: 'smooth' });
+                }
+            };
+            paginationContainer.appendChild(nextBtn);
         }
 
         function getCategoryClass(category) {
             switch (category) {
                 case 'kuliner': return 'text-okoce-blue bg-blue-50';
-                case 'fashion': return 'text-purple-600 bg-purple-50';
-                case 'craft': return 'text-green-600 bg-green-50';
+                case 'pakaian': return 'text-purple-600 bg-purple-50';
+                case 'kerajinan': return 'text-green-600 bg-green-50';
                 case 'jasa': return 'text-yellow-600 bg-yellow-50';
                 default: return 'text-gray-600 bg-gray-50';
             }
@@ -601,13 +689,14 @@
         function filterProducts() {
             const query = searchInput ? searchInput.value.toLowerCase() : '';
 
-            const filtered = products.filter(product => {
+            filteredProducts = products.filter(product => {
                 const matchesSearch = product.title.toLowerCase().includes(query);
                 const matchesFilter = currentFilter === 'all' || product.category === currentFilter;
                 return matchesSearch && matchesFilter;
             });
 
-            renderProducts(filtered);
+            currentPage = 1; // Reset to first page
+            renderProducts();
         }
 
         // Event Listeners
@@ -633,7 +722,7 @@
 
         // Init
         document.addEventListener('DOMContentLoaded', () => {
-            renderProducts(products);
+            filterProducts(); // This will trigger initial render and set filteredProducts
         });
     </script>
 </body>
